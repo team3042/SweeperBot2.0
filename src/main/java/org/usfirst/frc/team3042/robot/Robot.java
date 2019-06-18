@@ -1,13 +1,9 @@
 package org.usfirst.frc.team3042.robot;
 
 import org.usfirst.frc.team3042.lib.Log;
-import org.usfirst.frc.team3042.robot.commands.ExampleCommand;
 import org.usfirst.frc.team3042.robot.subsystems.Drivetrain;
-import org.usfirst.frc.team3042.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team3042.robot.subsystems.Gyroscope;
 import org.usfirst.frc.team3042.robot.subsystems.LightRing;
-import org.usfirst.frc.team3042.robot.subsystems.PanTilt;
-import org.usfirst.frc.team3042.robot.subsystems.Spinner;
 import org.usfirst.frc.team3042.robot.subsystems.LineTracker;
 
 import edu.wpi.first.cameraserver.CameraServer;
@@ -16,7 +12,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 
 /** Robot *********************************************************************
  * The VM is configured to automatically run this class, and to call the
@@ -29,22 +24,17 @@ public class Robot extends TimedRobot {
 	/** Configuration Constants ***********************************************/
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_ROBOT;
 	private static final boolean HAS_DRIVETRAIN = RobotMap.HAS_DRIVETRAIN;
-	private static final boolean HAS_PAN_TILT = RobotMap.HAS_PAN_TILT;
 	private static final boolean HAS_GYROSCOPE = RobotMap.HAS_GYROSCOPE;
 	private static final boolean HAS_LIGHT_RING = RobotMap.HAS_LIGHT_RING;
-	private static final boolean HAS_SPINNER = RobotMap.HAS_SPINNER;
 	private static final boolean HAS_LINE_TRACKER = RobotMap.HAS_LINE_TRACKER;
-	
+
 	
 	/** Create Subsystems *****************************************************/
 	private Log log = new Log(LOG_LEVEL, "Robot");
 	public static final Drivetrain 	drivetrain 	= (HAS_DRIVETRAIN) 	? new Drivetrain() 	: null;
-	public static final PanTilt 	panTilt 	= (HAS_PAN_TILT) 	? new PanTilt() 	: null;
-	public static final Spinner 	spinner 	= (HAS_SPINNER) 	? new Spinner() 	: null;
 	public static final Gyroscope 	gyroscope 	= (HAS_GYROSCOPE) 	? new Gyroscope() 	: null;
 	public static final LightRing 	lightRing 	= (HAS_LIGHT_RING) 	? new LightRing() 	: null;
 	public static final LineTracker lineTracker = (HAS_LINE_TRACKER) ? new LineTracker()  : null;
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
 
 	Command autonomousCommand;
@@ -67,8 +57,9 @@ public class Robot extends TimedRobot {
 		camera2.startAutomaticCapture();
 		
 		oi = new OI();
-		chooser.setDefaultOption("Default Auto", new ExampleCommand());
-		chooser.addOption("My Auto", new ExampleCommand());
+		/*Autonomous*/
+		//chooser.setDefaultOption("Default Auto", new ExampleCommand());
+		//chooser.addOption("My Auto", new ExampleCommand());
 		SmartDashboard.putData("Auto Mode", chooser);
 	}
 
