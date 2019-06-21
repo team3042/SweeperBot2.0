@@ -32,7 +32,6 @@ public class Gamepad extends Joystick{
 	public static final int JOY_X = 0;
 	public static final int JOY_Y_AXIS = 1;
 	
-	
 	/** Button Declarations ***************************************************/
 	Button A = new JoystickButton(this, BUTTON_A);
 	Button B = new JoystickButton(this, BUTTON_B);
@@ -44,7 +43,6 @@ public class Gamepad extends Joystick{
 	Button Start = new JoystickButton(this, BUTTON_START);
 	Button LeftJoy = new JoystickButton(this, BUTTON_LEFT_JOY);
 	Button RightJoy = new JoystickButton(this, BUTTON_RIGHT_JOY);
-	
 	
 	/** Trigger Declarations **************************************************/
 	Trigger LeftJoyLeft = new AxisTrigger(this, LEFT_JOY_X_AXIS, AxisTrigger.Direction.LEFT);
@@ -65,7 +63,6 @@ public class Gamepad extends Joystick{
 	Trigger POVLeft = new POVButton(this, POVButton.LEFT);
 	Trigger POVRight = new POVButton(this, POVButton.RIGHT);
 
-	
 	/** Joystick equivalent buttons *******************************************/
 	Button button1 = A;
 	Button button2 = B;
@@ -78,7 +75,6 @@ public class Gamepad extends Joystick{
 	Button button9 = LeftJoy;
 	Button button10 = RightJoy;
 
-	
 	public Gamepad (int port) {
 		super(port);
 	}

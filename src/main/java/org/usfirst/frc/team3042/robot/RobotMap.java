@@ -16,7 +16,6 @@ public class RobotMap {
 	public static final boolean IS_PBOT 	= (currentBot == Bot.PBOT);
 	public static final boolean IS_SweeperBot = (currentBot == Bot.SweeperBot);
 	
-	
 	/** Robot Size Parameters *************************************************
 	 * The units of the wheel diameter determine the units of the position 
 	 * and speed closed-loop commands. For example, if the diameter is given 
@@ -25,12 +24,8 @@ public class RobotMap {
 	public static final double WHEEL_DIAMETER = 4.0;
 	public static final double ROBOT_WIDTH = (IS_PBOT) ? 15.0 : 0.0;
 	
-	
 	/** USB ports *************************************************************/					
-	public static final int USB_JOYSTICK_LEFT 	= 0;
-	public static final int USB_JOYSTICK_RIGHT 	= 1;
-	public static final int USB_GAMEPAD 		= IS_PBOT ? 0 : 2;
-
+	public static final int USB_GAMEPAD = 0;
 
 	/** CAN ID numbers ********************************************************/
 	public static final int CAN_LEFT_MOTOR 	= 		IS_PBOT 	? 3 :
@@ -40,11 +35,9 @@ public class RobotMap {
 	public static final int CAN_LEFT_FOLLOWER = 	IS_SweeperBot 	? 0 : 0;
 	public static final int CAN_RIGHT_FOLLOWER = 	IS_SweeperBot 	? 0 : 0;
 	
-	
 	/** PCM channels **********************************************************/
 	public static final int LIGHT_RING_CHANNEL = 1;
 	
-
 	/** SPI ports *************************************************************/
 	public static final int LINE_TRACKER_PIXY_PORT = (IS_PBOT)? 0: 0;
 	//note that the Gyroscope uses the myRIO Expansion Port (MXP) and is defined in the SPI class (edu.wpi.first.wpilibj.SPI)
@@ -52,11 +45,9 @@ public class RobotMap {
 	//see http://www.ni.com/pdf/manuals/374474a.pdf for additional info on the RoboRio
 	
 	/** OI Settings ***********************************************************/
-	public static final boolean USE_JOYSTICKS = !IS_PBOT;
 	public static final double JOYSTICK_DRIVE_SCALE = 0.5;
 	public static final double TRIGGER_SPINNER_SCALE = 0.1;
 	public static final double JOYSTICK_DEAD_ZONE = 0.0;
-
 
 	/** Drivetrain Settings ***************************************************/
 	public static final boolean HAS_DRIVETRAIN = true;
@@ -71,7 +62,6 @@ public class RobotMap {
 	public static final double kF_DRIVE_RIGHT = (IS_PBOT) 		?  0.16686239968682717 :
 												(IS_SweeperBot) 	? 0.0 : 0.0;
 	
-	
 	/** Drivetrain Encoder Settings *******************************************/
 	public static final boolean HAS_ENCODERS = true;
 	//Encoder counts per revolution
@@ -81,7 +71,6 @@ public class RobotMap {
 	public static final int ENCODER_FRAME_RATE = 10;
 	public static final boolean SENSOR_PHASE_LEFT = 	(IS_PBOT) ? false: false;
 	public static final boolean SENSOR_PHASE_RIGHT = 	(IS_PBOT) ? false: false;
-	
 	
 	/** Drivetrain Autonomous Settings ****************************************/
 	public static final boolean HAS_AUTON = HAS_ENCODERS;
@@ -111,7 +100,6 @@ public class RobotMap {
 	public static final int AUTON_PIDIDX = 0; // used for cascading PID; set to zero
 	public static final int AUTON_HEADING = 0; //unimplemented feature; set to zero
 	
-	
 	/** Drivetrain Gyro Drive Settings ****************************************/
 	public static final double kP_GYRO = 0.0175;
 	public static final double kI_GYRO = 0.0;
@@ -120,11 +108,9 @@ public class RobotMap {
 	public static final double MAX_SPEED_GYRO = 0.4;
 	public static final double kI_GYRO_INTERVAL = 0.0;
 	
-	
 	/** Gyroscope Settings ****************************************************/
 	public static final boolean HAS_GYROSCOPE = true;
 	public static final double GYROSCOPE_SCALE = 1.0;
-	
 	
 	/** LEDRing Settings ******************************************************/
 	public static final boolean HAS_LIGHT_RING = true;
@@ -152,5 +138,4 @@ public class RobotMap {
 	public static final Log.Level	LOG_GYROSCOPE				= Log.Level.DEBUG;
 	public static final Log.Level	LOG_LIGHT_RING				= Log.Level.TRACE;
 	public static final Log.Level   LOG_LINE_TRACKER			= Log.Level.TRACE;
-	public static final Log.Level	LOG_EXAMPLE_SUBSYSTEM 		= Log.Level.TRACE;
 }

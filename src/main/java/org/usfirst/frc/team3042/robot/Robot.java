@@ -26,7 +26,6 @@ public class Robot extends TimedRobot {
 	private static final boolean HAS_GYROSCOPE = RobotMap.HAS_GYROSCOPE;
 	private static final boolean HAS_LIGHT_RING = RobotMap.HAS_LIGHT_RING;
 	private static final boolean HAS_LINE_TRACKER = RobotMap.HAS_LINE_TRACKER;
-
 	
 	/** Create Subsystems *****************************************************/
 	private Log log = new Log(LOG_LEVEL, "Robot");
@@ -53,7 +52,6 @@ public class Robot extends TimedRobot {
 		SmartDashboard.putData("Auto Mode", chooser);
 	}
 
-	
 	/** disabledInit **********************************************************
 	 * This function is called once each time the robot enters Disabled mode.
 	 * You can use it to reset any subsystem information you want to clear when
@@ -63,7 +61,6 @@ public class Robot extends TimedRobot {
 		log.add("Disabled Init", Log.Level.TRACE);
 	}
 
-	
 	/** disabledPeriodic ******************************************************
 	 * Called repeatedly while the robot is is disabled mode.
 	 */
@@ -71,7 +68,6 @@ public class Robot extends TimedRobot {
 		Scheduler.getInstance().run();
 	}
 
-	
 	/** autonomousInit ********************************************************
 	 * Run once at the start of autonomous mode.
 	 */
@@ -84,7 +80,6 @@ public class Robot extends TimedRobot {
 		if (autonomousCommand != null)
 			autonomousCommand.start();
 	}
-
 	
 	/** autonomousPeriodic ****************************************************
 	 * This function is called periodically during autonomous
@@ -93,7 +88,6 @@ public class Robot extends TimedRobot {
 		Scheduler.getInstance().run();
 	}
 
-	
 	/** teleopInit ************************************************************
 	 * This function is called when first entering teleop mode.
 	 */
@@ -108,7 +102,6 @@ public class Robot extends TimedRobot {
 			autonomousCommand.cancel();
 	}
 
-
 	/** teleopPeriodic ********************************************************
 	 * This function is called periodically during operator control
 	 */
@@ -116,7 +109,6 @@ public class Robot extends TimedRobot {
 		Scheduler.getInstance().run();
 	}
 
-	
 	/** testPeriodic **********************************************************
 	 * This function is called periodically during test mode
 	 */
