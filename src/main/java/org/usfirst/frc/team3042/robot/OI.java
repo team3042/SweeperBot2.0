@@ -10,7 +10,7 @@ import org.usfirst.frc.team3042.lib.Path;
 public class OI {	
 	/** Configuration Constants ***********************************************/
 	private static final boolean IS_PBOT = RobotMap.IS_PBOT;
-	private static final boolean IS_ARTEMIS = RobotMap.IS_ARTEMIS;
+	private static final boolean IS_SweeperBot = RobotMap.IS_SweeperBot;
 	private static final int USB_GAMEPAD = RobotMap.USB_GAMEPAD;
 	private static final int USB_JOY_LEFT = RobotMap.USB_JOYSTICK_LEFT;
 	private static final int USB_JOY_RIGHT = RobotMap.USB_JOYSTICK_RIGHT;
@@ -100,8 +100,8 @@ public class OI {
 			//gamepad.Y.whenPressed(new Drivetrain_GyroTurn(270.0));
 		}
 		
-		/** Artemis Controls **************************************************/
-		if (IS_ARTEMIS) {
+		/** SweeperBot Controls **************************************************/
+		if (IS_SweeperBot) {
 			
 		}
 	}
