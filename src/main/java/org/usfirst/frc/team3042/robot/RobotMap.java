@@ -36,7 +36,6 @@ public class RobotMap {
 	public static final int CAN_RIGHT_FOLLOWER = 	IS_SweeperBot 	? 0 : 0;
 	
 	/** PCM channels **********************************************************/
-	public static final int LIGHT_RING_CHANNEL = 1;
 	
 	/** SPI ports *************************************************************/
 	public static final int LINE_TRACKER_PIXY_PORT = (IS_PBOT)? 0: 0;
@@ -112,12 +111,6 @@ public class RobotMap {
 	public static final boolean HAS_GYROSCOPE = true;
 	public static final double GYROSCOPE_SCALE = 1.0;
 	
-	/** LEDRing Settings ******************************************************/
-	public static final boolean HAS_LIGHT_RING = true;
-
-	/** LineTracker Settings ******************************************************/
-	public static final boolean HAS_LINE_TRACKER = false;
-	
 	/** Logger Settings *******************************************************/
 	public static final String 		LOG_FILE_FORMAT = "yyyy-MM-dd-hhmmss";
 	public static final String 		LOG_TIME_FORMAT = "hh:mm:ss:SSS";
@@ -136,6 +129,5 @@ public class RobotMap {
 	public static final Log.Level	LOG_DRIVETRAIN_ENCODERS 	= Log.Level.DEBUG;
 	public static final Log.Level	LOG_DRIVETRAIN_AUTON		= Log.Level.DEBUG;
 	public static final Log.Level	LOG_GYROSCOPE				= Log.Level.DEBUG;
-	public static final Log.Level	LOG_LIGHT_RING				= Log.Level.TRACE;
 	public static final Log.Level   LOG_LINE_TRACKER			= Log.Level.TRACE;
 }

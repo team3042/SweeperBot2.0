@@ -3,8 +3,6 @@ package org.usfirst.frc.team3042.robot;
 import org.usfirst.frc.team3042.lib.Log;
 import org.usfirst.frc.team3042.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team3042.robot.subsystems.Gyroscope;
-import org.usfirst.frc.team3042.robot.subsystems.LightRing;
-import org.usfirst.frc.team3042.robot.subsystems.LineTracker;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -24,15 +22,12 @@ public class Robot extends TimedRobot {
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_ROBOT;
 	private static final boolean HAS_DRIVETRAIN = RobotMap.HAS_DRIVETRAIN;
 	private static final boolean HAS_GYROSCOPE = RobotMap.HAS_GYROSCOPE;
-	private static final boolean HAS_LIGHT_RING = RobotMap.HAS_LIGHT_RING;
 	private static final boolean HAS_LINE_TRACKER = RobotMap.HAS_LINE_TRACKER;
 	
 	/** Create Subsystems *****************************************************/
 	private Log log = new Log(LOG_LEVEL, "Robot");
 	public static final Drivetrain 	drivetrain 	= (HAS_DRIVETRAIN) 	? new Drivetrain() 	: null;
 	public static final Gyroscope 	gyroscope 	= (HAS_GYROSCOPE) 	? new Gyroscope() 	: null;
-	public static final LightRing 	lightRing 	= (HAS_LIGHT_RING) 	? new LightRing() 	: null;
-	public static final LineTracker lineTracker = (HAS_LINE_TRACKER) ? new LineTracker()  : null;
 	public static OI oi;
 
 	Command autonomousCommand;
