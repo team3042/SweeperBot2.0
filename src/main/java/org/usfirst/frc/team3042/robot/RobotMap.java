@@ -28,10 +28,8 @@ public class RobotMap {
 	public static final int USB_GAMEPAD = 0;
 
 	/** CAN ID numbers ********************************************************/
-	public static final int CAN_LEFT_MOTOR 	= 		IS_PBOT 	? 3 :
-													IS_SweeperBot 	? 0 : 0;
-	public static final int CAN_RIGHT_MOTOR = 		IS_PBOT 	? 9 :
-													IS_SweeperBot 	? 0 : 0;
+	public static final int CAN_LEFT_MOTOR 	= 		IS_PBOT 	? 3 : 3;
+	public static final int CAN_RIGHT_MOTOR = 		IS_PBOT 	? 9 : 9;
 	public static final int CAN_LEFT_FOLLOWER = 	IS_SweeperBot 	? 0 : 0;
 	public static final int CAN_RIGHT_FOLLOWER = 	IS_SweeperBot 	? 0 : 0;
 	
@@ -56,10 +54,9 @@ public class RobotMap {
 	public static final boolean REVERSE_RIGHT_MOTOR = 	(IS_PBOT) ? false: false;
 	// Maximum Acceleration given in power per second
 	public static final double ACCELERATION_MAX = 1.5;
-	public static final double kF_DRIVE_LEFT = 	(IS_PBOT) 		?  0.1817180616740088 :
-												(IS_SweeperBot) 	? 0.0 : 0.0;
-	public static final double kF_DRIVE_RIGHT = (IS_PBOT) 		?  0.16686239968682717 :
-												(IS_SweeperBot) 	? 0.0 : 0.0;
+	public static final double kF_DRIVE_LEFT = 	(IS_PBOT) 	?  0.1817180616740088  : 0.1817180616740088;
+	public static final double kF_DRIVE_RIGHT = (IS_PBOT) 	?  0.16686239968682717 : 0.16686239968682717;
+
 	
 	/** Drivetrain Encoder Settings *******************************************/
 	public static final boolean HAS_ENCODERS = true;
@@ -74,14 +71,10 @@ public class RobotMap {
 	/** Drivetrain Autonomous Settings ****************************************/
 	public static final boolean HAS_AUTON = HAS_ENCODERS;
 	public static final int AUTON_PROFILE = 0;
-	public static final double kP_AUTON = 		(IS_PBOT) 		? 0.4 :
-												(IS_SweeperBot) 	? 0.0 : 0.0;
-	public static final double kI_AUTON = 		(IS_PBOT) 		? 0.0 :
-												(IS_SweeperBot) 	? 0.0 : 0.0;
-	public static final double kD_AUTON = 		(IS_PBOT) 		? 0.8 :
-												(IS_SweeperBot) 	? 0.0 : 0.0;
-	public static final int I_ZONE_AUTON =		(IS_PBOT)		? 0 :
-												(IS_SweeperBot)	? 0 : 0;
+	public static final double kP_AUTON = 		(IS_PBOT) 		? 0.4 : 0.4;
+	public static final double kI_AUTON = 		(IS_PBOT) 		? 0.0 : 0.0;
+	public static final double kD_AUTON = 		(IS_PBOT) 		? 0.8 : 0.8;
+	public static final int I_ZONE_AUTON =		(IS_PBOT)		? 0   : 0;
 	//The rate of pushing motion profile points to the talon, in ms
 	public static final int AUTON_FRAME_RATE = 10;
 	//Parameters for calibrating the F-gain
