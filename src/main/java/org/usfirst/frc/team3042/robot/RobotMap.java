@@ -22,7 +22,7 @@ public class RobotMap {
 	 * in inches, position will be in inches and speed in inches per second.
 	 */
 	public static final double WHEEL_DIAMETER = 4.0;
-	public static final double ROBOT_WIDTH = (IS_PBOT) ? 15.0 : 0.0;
+	public static final double ROBOT_WIDTH = (IS_PBOT) ? 15.0 : 16.0;
 	
 	/** USB ports *************************************************************/					
 	public static final int USB_GAMEPAD = 0;
@@ -36,7 +36,6 @@ public class RobotMap {
 	/** PCM channels **********************************************************/
 	
 	/** SPI ports *************************************************************/
-	public static final int LINE_TRACKER_PIXY_PORT = (IS_PBOT)? 0: 0;
 	//note that the Gyroscope uses the myRIO Expansion Port (MXP) and is defined in the SPI class (edu.wpi.first.wpilibj.SPI)
 	//notes for dummies: the MXP is the big boy smack center of the RoboRio (where the gyro ALWAYS goes);
 	//see http://www.ni.com/pdf/manuals/374474a.pdf for additional info on the RoboRio

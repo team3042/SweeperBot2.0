@@ -8,8 +8,8 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
-
 
 /** Drivetrain ****************************************************************
  * The drivetrain subsystem for the robot.
@@ -24,18 +24,23 @@ public class Drivetrain extends Subsystem {
 	private static final boolean HAS_AUTON = RobotMap.HAS_AUTON;
 	private static final NeutralMode BRAKE_MODE = RobotMap.DRIVETRAIN_BRAKE_MODE;
 	private static final boolean REVERSE_LEFT_MOTOR = RobotMap.REVERSE_LEFT_MOTOR;
-	private static final boolean REVERSE_RIGHT_MOTOR = RobotMap.REVERSE_RIGHT_MOTOR;	
-	
+	private static final boolean REVERSE_RIGHT_MOTOR = RobotMap.REVERSE_RIGHT_MOTOR;
+	private static final boolean IS_PBOT = RobotMap.IS_PBOT;
+	private static final boolean IS_SweeperBot = RobotMap.IS_SweeperBot;	
 	
 	/** Instance Variables ****************************************************/
 	Log log = new Log(LOG_LEVEL, getName());
+
 	TalonSRX leftMotor = new TalonSRX(CAN_LEFT_MOTOR);
 	TalonSRX rightMotor = new TalonSRX(CAN_RIGHT_MOTOR);
+
+	Talon sweeperBotLeftMotor = new Talon( 0 /*PDP Channel the TalonSR is plugged in to*/);
+	Talon sweeperBotRightMotor =  new Talon( 1 /*PDP Channel the TalonSR is plugged in to*/);
+
 	DrivetrainFollowers followers;
 	DrivetrainEncoders encoders;
 	DrivetrainAuton auton;
 
-	
 	/** Drivetrain ************************************************************
 	 * Set up the talons for desired behavior.
 	 */
@@ -58,7 +63,6 @@ public class Drivetrain extends Subsystem {
 		motor.setInverted(reverse); 	// affects percent Vbus mode
 	}
 	
-	
 	/** initDefaultCommand ****************************************************
 	 * Set the default command for the subsystem.
 	 */
@@ -66,14 +70,19 @@ public class Drivetrain extends Subsystem {
 		setDefaultCommand(new Drivetrain_TankDrive());
 	}
 	
-	
 	/** Methods for setting the motors in Percent Vbus mode ********************/
 	public void setPower(double leftPower, double rightPower) {
 		leftPower = safetyCheck(leftPower);
 		rightPower = safetyCheck(rightPower);
-				
-		leftMotor.set(ControlMode.PercentOutput, leftPower);
-		rightMotor.set(ControlMode.PercentOutput, rightPower);		
+
+		if(IS_PBOT) {		
+			leftMotor.set(ControlMode.PercentOutput, leftPower);
+			rightMotor.set(ControlMode.PercentOutput, rightPower);
+		}
+		else if (IS_SweeperBot) {
+			sweeperBotLeftMotor.set(leftPower);
+			sweeperBotRightMotor.set(rightPower);
+		}
 	}
 	public void stop() {
 		setPower(0.0, 0.0);
@@ -83,7 +92,6 @@ public class Drivetrain extends Subsystem {
 		power = Math.max(-1.0, power);
 		return power;
 	}
-	
 	
 	/** Provide commands access to the encoders and autonomous ****************/
 	public DrivetrainEncoders getEncoders() {
