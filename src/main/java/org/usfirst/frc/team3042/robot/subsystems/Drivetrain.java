@@ -19,6 +19,8 @@ public class Drivetrain extends Subsystem {
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_DRIVETRAIN;
 	private static final int CAN_LEFT_MOTOR = RobotMap.CAN_LEFT_MOTOR;
 	private static final int CAN_RIGHT_MOTOR = RobotMap.CAN_RIGHT_MOTOR;
+	private static final int LEFT_TALON_CHANNEL = RobotMap.LEFT_TALON_CHANNEL;
+	private static final int RIGHT_TALON_CHANNEL = RobotMap.RIGHT_TALON_CHANNEL;
 	private static final boolean HAS_FOLLOWERS = RobotMap.HAS_FOLLOWERS;
 	private static final boolean HAS_ENCODERS = RobotMap.HAS_ENCODERS;
 	private static final boolean HAS_AUTON = RobotMap.HAS_AUTON;
@@ -26,7 +28,7 @@ public class Drivetrain extends Subsystem {
 	private static final boolean REVERSE_LEFT_MOTOR = RobotMap.REVERSE_LEFT_MOTOR;
 	private static final boolean REVERSE_RIGHT_MOTOR = RobotMap.REVERSE_RIGHT_MOTOR;
 	private static final boolean IS_PBOT = RobotMap.IS_PBOT;
-	private static final boolean IS_SweeperBot = RobotMap.IS_SweeperBot;	
+	private static final boolean IS_SWEEPERBOT = RobotMap.IS_SWEEPERBOT;	
 	
 	/** Instance Variables ****************************************************/
 	Log log = new Log(LOG_LEVEL, getName());
@@ -34,8 +36,8 @@ public class Drivetrain extends Subsystem {
 	TalonSRX leftMotor = new TalonSRX(CAN_LEFT_MOTOR);
 	TalonSRX rightMotor = new TalonSRX(CAN_RIGHT_MOTOR);
 
-	Talon sweeperBotLeftMotor = new Talon( 0 /*PDP Channel the TalonSR is plugged in to*/);
-	Talon sweeperBotRightMotor =  new Talon( 1 /*PDP Channel the TalonSR is plugged in to*/);
+	Talon sweeperBotLeftMotor = new Talon(LEFT_TALON_CHANNEL);
+	Talon sweeperBotRightMotor =  new Talon(RIGHT_TALON_CHANNEL);
 
 	DrivetrainFollowers followers;
 	DrivetrainEncoders encoders;
@@ -79,7 +81,7 @@ public class Drivetrain extends Subsystem {
 			leftMotor.set(ControlMode.PercentOutput, leftPower);
 			rightMotor.set(ControlMode.PercentOutput, rightPower);
 		}
-		else if (IS_SweeperBot) {
+		else if (IS_SWEEPERBOT) {
 			sweeperBotLeftMotor.set(leftPower);
 			sweeperBotRightMotor.set(rightPower);
 		}

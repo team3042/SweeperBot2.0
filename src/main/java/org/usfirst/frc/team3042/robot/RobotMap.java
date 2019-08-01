@@ -9,12 +9,12 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
  */
 public class RobotMap {
 	/** Robot selector ********************************************************/
-	public static enum Bot {PBOT, SweeperBot;}
+	public static enum Bot {PBOT, SWEEPERBOT;}
 	// Set the bot to which you intend to push code.
 	private static Bot currentBot = Bot.PBOT;
 
 	public static final boolean IS_PBOT 	= (currentBot == Bot.PBOT);
-	public static final boolean IS_SweeperBot = (currentBot == Bot.SweeperBot);
+	public static final boolean IS_SWEEPERBOT = (currentBot == Bot.SWEEPERBOT);
 	
 	/** Robot Size Parameters *************************************************
 	 * The units of the wheel diameter determine the units of the position 
@@ -28,10 +28,14 @@ public class RobotMap {
 	public static final int USB_GAMEPAD = 0;
 
 	/** CAN ID numbers ********************************************************/
-	public static final int CAN_LEFT_MOTOR 	= 		IS_PBOT 	? 3 : 3;
-	public static final int CAN_RIGHT_MOTOR = 		IS_PBOT 	? 9 : 9;
-	public static final int CAN_LEFT_FOLLOWER = 	IS_SweeperBot 	? 0 : 0;
-	public static final int CAN_RIGHT_FOLLOWER = 	IS_SweeperBot 	? 0 : 0;
+	public static final int CAN_LEFT_MOTOR 	= 		IS_PBOT 	? 3 : 0;
+	public static final int CAN_RIGHT_MOTOR = 		IS_PBOT 	? 9 : 0;
+	public static final int CAN_LEFT_FOLLOWER = 	IS_SWEEPERBOT 	? 0 : 0;
+	public static final int CAN_RIGHT_FOLLOWER = 	IS_SWEEPERBOT 	? 0 : 0;
+
+	/** SweeperBot Talon SR Channels ******************************************/
+	public static final int LEFT_TALON_CHANNEL  =  IS_SWEEPERBOT  ? 0 : 0;
+	public static final int RIGHT_TALON_CHANNEL =  IS_SWEEPERBOT  ? 0 : 0;	
 	
 	/** PCM channels **********************************************************/
 	
@@ -47,7 +51,7 @@ public class RobotMap {
 
 	/** Drivetrain Settings ***************************************************/
 	public static final boolean HAS_DRIVETRAIN = true;
-	public static final boolean HAS_FOLLOWERS = !IS_PBOT;
+	public static final boolean HAS_FOLLOWERS = false;
 	public static final NeutralMode DRIVETRAIN_BRAKE_MODE = NeutralMode.Brake;
 	public static final boolean REVERSE_LEFT_MOTOR = 	(IS_PBOT) ? true : false;
 	public static final boolean REVERSE_RIGHT_MOTOR = 	(IS_PBOT) ? false: false;

@@ -10,7 +10,7 @@ import org.usfirst.frc.team3042.lib.Log;
 public class OI {	
 	/** Configuration Constants ***********************************************/
 	private static final boolean IS_PBOT = RobotMap.IS_PBOT;
-	private static final boolean IS_SweeperBot = RobotMap.IS_SweeperBot;
+	private static final boolean IS_SWEEPERBOT = RobotMap.IS_SWEEPERBOT;
 	private static final int USB_GAMEPAD = RobotMap.USB_GAMEPAD;
 	private static final double JOYSTICK_DRIVE_SCALE = RobotMap.JOYSTICK_DRIVE_SCALE;
 	private static final double JOYSTICK_DEAD_ZONE = RobotMap.JOYSTICK_DEAD_ZONE;
@@ -60,7 +60,7 @@ public class OI {
 		}
 		
 		/** SweeperBot Controls **************************************************/
-		if (IS_SweeperBot) {
+		if (IS_SWEEPERBOT) {
 			
 		}
 	}
