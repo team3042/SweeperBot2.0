@@ -2,8 +2,6 @@ package org.usfirst.frc.team3042.robot;
 
 import org.usfirst.frc.team3042.lib.Log;
 //import org.usfirst.frc.team3042.lib.Path;
-import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroStraight;
-import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroTurn;
 
 /** OI ************************************************************************
  * This class is the glue that binds the controls on the physical operator
