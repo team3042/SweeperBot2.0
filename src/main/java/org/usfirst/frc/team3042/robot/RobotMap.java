@@ -31,11 +31,7 @@ public class RobotMap {
 	public static final int CAN_LEFT_MOTOR 	= 		IS_PBOT 	? 3 : 0;
 	public static final int CAN_RIGHT_MOTOR = 		IS_PBOT 	? 9 : 0;
 	public static final int CAN_LEFT_FOLLOWER = 	IS_SWEEPERBOT 	? 0 : 0;
-	public static final int CAN_RIGHT_FOLLOWER = 	IS_SWEEPERBOT 	? 0 : 0;
-
-	/** SweeperBot Talon SR Channels ******************************************/
-	public static final int LEFT_TALON_CHANNEL  =  IS_SWEEPERBOT  ? 0 : 0;
-	public static final int RIGHT_TALON_CHANNEL =  IS_SWEEPERBOT  ? 0 : 0;	
+	public static final int CAN_RIGHT_FOLLOWER = 	IS_SWEEPERBOT 	? 0 : 0;	
 	
 	/** PCM channels **********************************************************/
 	
