@@ -3,6 +3,8 @@ package org.usfirst.frc.team3042.robot;
 import org.usfirst.frc.team3042.lib.Log;
 import org.usfirst.frc.team3042.lib.Path;
 import org.usfirst.frc.team3042.robot.commands.DrivetrainAuton_Drive;
+import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroStraight;
+import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroTurn;
 
 /** OI ************************************************************************
  * This class is the glue that binds the controls on the physical operator
@@ -44,9 +46,9 @@ public class OI {
 		/** PBOT Controls *****************************************************/
 		if (IS_PBOT) {
 
-			/*Gyroscope needs to be fixed*/
-			//gamepad.X.whenPressed(new Drivetrain_GyroStraight(72.0, 24.0));
-			//gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
+			/*Gyroscope needs to be fixed?*/
+			gamepad.X.whenPressed(new Drivetrain_GyroStraight(72.0, 24.0));
+			gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
 
 			/*Code For Autonomous Driving*/
 
