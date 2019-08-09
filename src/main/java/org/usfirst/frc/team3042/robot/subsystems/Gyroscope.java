@@ -6,6 +6,7 @@ import org.usfirst.frc.team3042.lib.Log;
 import org.usfirst.frc.team3042.robot.RobotMap;
 import org.usfirst.frc.team3042.robot.commands.Gyroscope_Dashboard;
 
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /** Gyroscope *****************************************************************
@@ -18,7 +19,8 @@ public class Gyroscope extends Subsystem {
 
 	/** Instance Variables ****************************************************/
 	Log log = new Log(LOG_LEVEL, getName());
-    ADIS16448_IMU gyroscope = new ADIS16448_IMU();
+	ADIS16448_IMU gyroscope = new ADIS16448_IMU();
+	ADXRS450_Gyro sweeperBotGyro = new ADXRS450_Gyro();
 
 	/** Gyroscope *************************************************************/
 	public Gyroscope() {
@@ -36,12 +38,15 @@ public class Gyroscope extends Subsystem {
 	
 	/** Command Methods *******************************************************/
 	public double getAngle() {
-		return gyroscope.getAngleZ()*GYROSCOPE_SCALE;	
+		//return gyroscope.getAngleZ()*GYROSCOPE_SCALE;	
+		return sweeperBotGyro.getAngle() * GYROSCOPE_SCALE;
 	}
 	public void reset() {
-		gyroscope.reset();
+		//gyroscope.reset();
+		sweeperBotGyro.reset();
 	}
 	public void calibrate() {
-		gyroscope.calibrate();
+		//gyroscope.calibrate();
+		sweeperBotGyro.calibrate();
 	}
 }

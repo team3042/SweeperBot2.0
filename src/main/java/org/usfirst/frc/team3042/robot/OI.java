@@ -56,11 +56,9 @@ public class OI {
 			Path basketballCourt = new Path();
 
 			basketballCourt.addStraight(36.0, 18.0);
-			basketballCourt.addRightTurn(90.0, turnRadius, 21.0);
-			basketballCourt.addLeftTurn(120, turnRadius, 21.0);
-			basketballCourt.addLeftTurn(120, turnRadius, -21.0);
-			basketballCourt.addRightTurn(90.0, turnRadius, -21.0);
-			basketballCourt.addStraight(36.0, -18.0);
+			basketballCourt.addRightTurn(180.0, turnRadius, 21.0);
+			basketballCourt.addStraight(36.0, 18.0);
+			basketballCourt.addRightTurn(180.0, turnRadius, 21.0);
 
 			gamepad.A.whenPressed(new DrivetrainAuton_Drive(basketballCourt));
 			
@@ -75,12 +73,10 @@ public class OI {
 			double turnRadius = 1.5 * ROBOT_WIDTH;
 			Path basketballCourt = new Path();
 
-			basketballCourt.addStraight(36.0, 18.0);
-			basketballCourt.addRightTurn(90.0, turnRadius, 21.0);
-			basketballCourt.addLeftTurn(120, turnRadius, 21.0);
-			basketballCourt.addLeftTurn(120, turnRadius, -21.0);
-			basketballCourt.addRightTurn(90.0, turnRadius, -21.0);
-			basketballCourt.addStraight(36.0, -18.0);
+			basketballCourt.addStraight(36.0, 25.0);
+			basketballCourt.addRightTurn(180.0, turnRadius, 25.0);
+			basketballCourt.addStraight(36.0, 25.0);
+			basketballCourt.addRightTurn(180.0, turnRadius, 25.0);
 
 			gamepad.A.whenPressed(new DrivetrainAuton_Drive(basketballCourt));
 		}
