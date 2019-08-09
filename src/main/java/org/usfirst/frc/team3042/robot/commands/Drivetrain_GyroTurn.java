@@ -57,6 +57,7 @@ public class Drivetrain_GyroTurn extends Command {
 		lastError = 0.0;
 		integralError = 0.0;
 		gyroscope.reset();
+		log.add("Goal Angle: " + goalAngle, Log.Level.DEBUG);
 	}
 
 	

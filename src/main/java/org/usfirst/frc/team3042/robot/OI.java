@@ -3,6 +3,8 @@ package org.usfirst.frc.team3042.robot;
 import org.usfirst.frc.team3042.lib.Log;
 import org.usfirst.frc.team3042.lib.Path;
 import org.usfirst.frc.team3042.robot.commands.DrivetrainAuton_Drive;
+import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroStraight;
+import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroTurn;
 
 /** OI ************************************************************************
  * This class is the glue that binds the controls on the physical operator
@@ -44,9 +46,9 @@ public class OI {
 		/** PBOT Controls *****************************************************/
 		if (IS_PBOT) {
 
-			/*Gyroscope needs to be fixed*/
-			//gamepad.X.whenPressed(new Drivetrain_GyroStraight(72.0, 24.0));
-			//gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
+			/*Gyroscope needs to be fixed?*/
+			gamepad.X.whenPressed(new Drivetrain_GyroStraight(72.0, 24.0));
+			gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
 
 			/*Code For Autonomous Driving*/
 
@@ -54,11 +56,9 @@ public class OI {
 			Path basketballCourt = new Path();
 
 			basketballCourt.addStraight(36.0, 18.0);
-			basketballCourt.addRightTurn(90.0, turnRadius, 21.0);
-			basketballCourt.addLeftTurn(120, turnRadius, 21.0);
-			basketballCourt.addLeftTurn(120, turnRadius, -21.0);
-			basketballCourt.addRightTurn(90.0, turnRadius, -21.0);
-			basketballCourt.addStraight(36.0, -18.0);
+			basketballCourt.addRightTurn(180.0, turnRadius, 21.0);
+			basketballCourt.addStraight(36.0, 18.0);
+			basketballCourt.addRightTurn(180.0, turnRadius, 21.0);
 
 			gamepad.A.whenPressed(new DrivetrainAuton_Drive(basketballCourt));
 			
@@ -73,12 +73,10 @@ public class OI {
 			double turnRadius = 1.5 * ROBOT_WIDTH;
 			Path basketballCourt = new Path();
 
-			basketballCourt.addStraight(36.0, 18.0);
-			basketballCourt.addRightTurn(90.0, turnRadius, 21.0);
-			basketballCourt.addLeftTurn(120, turnRadius, 21.0);
-			basketballCourt.addLeftTurn(120, turnRadius, -21.0);
-			basketballCourt.addRightTurn(90.0, turnRadius, -21.0);
-			basketballCourt.addStraight(36.0, -18.0);
+			basketballCourt.addStraight(36.0, 25.0);
+			basketballCourt.addRightTurn(180.0, turnRadius, 25.0);
+			basketballCourt.addStraight(36.0, 25.0);
+			basketballCourt.addRightTurn(180.0, turnRadius, 25.0);
 
 			gamepad.A.whenPressed(new DrivetrainAuton_Drive(basketballCourt));
 		}
