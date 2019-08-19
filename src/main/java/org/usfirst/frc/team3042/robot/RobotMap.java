@@ -22,7 +22,7 @@ public class RobotMap {
 	 * in inches, position will be in inches and speed in inches per second.
 	 */
 	public static final double WHEEL_DIAMETER = 4.0;
-	public static final double ROBOT_WIDTH = (IS_PBOT) ? 15.0 : 16.0;
+	public static final double ROBOT_WIDTH = (IS_PBOT) ? 15.0 : 16.0; //Measured in inches 
 	
 	/** USB ports *************************************************************/					
 	public static final int USB_GAMEPAD = 0;
@@ -96,13 +96,13 @@ public class RobotMap {
 	public static final double kI_GYRO = 0.0;
 	public static final double kD_GYRO = 0.0170;
 	public static final double ANGLE_TOLERANCE = 2.0;
-	public static final double MAX_SPEED_GYRO = 0.4;
+	public static final double MAX_SPEED_GYRO = 0.2;
 	public static final double kI_GYRO_INTERVAL = 0.0;
 	
 	/** Gyroscope Settings ****************************************************/
 	public static final boolean HAS_GYROSCOPE = true;
 	public static final double GYROSCOPE_SCALE = 1.0;
-	
+
 	/** Logger Settings *******************************************************/
 	public static final String 		LOG_FILE_FORMAT = "yyyy-MM-dd-hhmmss";
 	public static final String 		LOG_TIME_FORMAT = "hh:mm:ss:SSS";

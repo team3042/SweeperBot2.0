@@ -1,8 +1,9 @@
 package org.usfirst.frc.team3042.robot;
 
 import org.usfirst.frc.team3042.lib.Log;
-import org.usfirst.frc.team3042.lib.Path;
-import org.usfirst.frc.team3042.robot.commands.DrivetrainAuton_Drive;
+//import org.usfirst.frc.team3042.lib.Path;
+//import org.usfirst.frc.team3042.robot.commands.DrivetrainAuton_Drive;
+import org.usfirst.frc.team3042.robot.commands.Drivetrain_BasketballCourt;
 import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroStraight;
 import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroTurn;
 
@@ -18,7 +19,7 @@ public class OI {
 	private static final double JOYSTICK_DRIVE_SCALE = RobotMap.JOYSTICK_DRIVE_SCALE;
 	private static final double JOYSTICK_DEAD_ZONE = RobotMap.JOYSTICK_DEAD_ZONE;
 	private static final double TRIGGER_SPINNER_SCALE = RobotMap.TRIGGER_SPINNER_SCALE;
-	private static final double ROBOT_WIDTH = RobotMap.ROBOT_WIDTH;
+	//private static final double ROBOT_WIDTH = RobotMap.ROBOT_WIDTH;
 	private static final int GAMEPAD_LEFT_Y_AXIS = Gamepad.LEFT_JOY_Y_AXIS;
 	private static final int GAMEPAD_RIGHT_Y_AXIS = Gamepad.RIGHT_JOY_Y_AXIS;
 	private static final int GAMEPAD_LEFT_TRIGGER = Gamepad.LEFT_TRIGGER;
@@ -47,20 +48,26 @@ public class OI {
 		if (IS_PBOT) {
 
 			/*Gyroscope needs to be fixed?*/
-			gamepad.X.whenPressed(new Drivetrain_GyroStraight(72.0, 24.0));
+			gamepad.X.whenPressed(new Drivetrain_GyroStraight(36, 24.0));
 			gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
+
+			gamepad.A.whenPressed(new Drivetrain_BasketballCourt());
 
 			/*Code For Autonomous Driving*/
 
-			double turnRadius = 1.5 * ROBOT_WIDTH;
+			/*double turnRadius = 1.5 * ROBOT_WIDTH;
 			Path basketballCourt = new Path();
 
 			basketballCourt.addStraight(36.0, 18.0);
-			basketballCourt.addRightTurn(180.0, turnRadius, 21.0);
+			basketballCourt.addRightTurn(90.0, turnRadius, 21.0);
+			basketballCourt.addStraight(8.0, 18.0);
+			basketballCourt.addRightTurn(90.0, turnRadius, 21.0);
 			basketballCourt.addStraight(36.0, 18.0);
-			basketballCourt.addRightTurn(180.0, turnRadius, 21.0);
+			basketballCourt.addRightTurn(90.0, turnRadius, 21.0);
+			basketballCourt.addStraight(8.0, 18.0);
+			basketballCourt.addRightTurn(90.0, turnRadius, 21.0);
 
-			gamepad.A.whenPressed(new DrivetrainAuton_Drive(basketballCourt));
+			gamepad.A.whenPressed(new DrivetrainAuton_Drive(basketballCourt));*/
 			
 			//double turnInPlace = 0.5 * ROBOT_WIDTH;
 			//Path testPath2 = new Path();
@@ -70,15 +77,7 @@ public class OI {
 		
 		/** SweeperBot Controls **************************************************/
 		if (IS_SWEEPERBOT) {
-			double turnRadius = 1.5 * ROBOT_WIDTH;
-			Path basketballCourt = new Path();
-
-			basketballCourt.addStraight(36.0, 25.0);
-			basketballCourt.addRightTurn(180.0, turnRadius, 25.0);
-			basketballCourt.addStraight(36.0, 25.0);
-			basketballCourt.addRightTurn(180.0, turnRadius, 25.0);
-
-			gamepad.A.whenPressed(new DrivetrainAuton_Drive(basketballCourt));
+			gamepad.A.whenPressed(new Drivetrain_BasketballCourt());
 		}
 	}
 	
