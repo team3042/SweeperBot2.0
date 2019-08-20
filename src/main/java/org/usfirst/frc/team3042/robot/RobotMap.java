@@ -21,7 +21,7 @@ public class RobotMap {
 	 * and speed closed-loop commands. For example, if the diameter is given 
 	 * in inches, position will be in inches and speed in inches per second.
 	 */
-	public static final double WHEEL_DIAMETER = 4.0;
+	public static final double WHEEL_DIAMETER = (IS_PBOT) ? 4.0 : 4.0; //Measured in inches
 	public static final double ROBOT_WIDTH = (IS_PBOT) ? 15.0 : 16.0; //Measured in inches 
 	
 	/** USB ports *************************************************************/					
@@ -90,6 +90,11 @@ public class RobotMap {
 	public static final int AUTON_TIMEOUT = 0; // timeout in ms; set to zero
 	public static final int AUTON_PIDIDX = 0; // used for cascading PID; set to zero
 	public static final int AUTON_HEADING = 0; //unimplemented feature; set to zero
+
+	/** Basketball Court Constants ********************************************/
+	public static final double BASKETBALL_COURT_LENGTH = 360.0;
+	public static final double BASKETBALL_COURT_WIDTH = 120.0;
+	public static final double BASKETBALL_COURT_DRIVE_SPEED = 24.0;
 	
 	/** Drivetrain Gyro Drive Settings ****************************************/
 	public static final double kP_GYRO = 0.0175;
