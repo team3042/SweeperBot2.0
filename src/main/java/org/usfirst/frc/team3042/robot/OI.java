@@ -48,7 +48,7 @@ public class OI {
 		if (IS_PBOT) {
 
 			/*Gyroscope needs to be fixed?*/
-			gamepad.X.whenPressed(new Drivetrain_GyroStraight(36, 24.0));
+			gamepad.X.whenPressed(new Drivetrain_GyroStraight(36, 24.0)); 
 			gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
 
 			gamepad.A.whenPressed(new Drivetrain_BasketballCourt());

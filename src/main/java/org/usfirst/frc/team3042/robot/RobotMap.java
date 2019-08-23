@@ -92,9 +92,9 @@ public class RobotMap {
 	public static final int AUTON_HEADING = 0; //unimplemented feature; set to zero
 
 	/** Basketball Court Constants ********************************************/
-	public static final double BASKETBALL_COURT_LENGTH = 360.0;
-	public static final double BASKETBALL_COURT_WIDTH = 120.0;
-	public static final double BASKETBALL_COURT_DRIVE_SPEED = 24.0;
+	public static final double BASKETBALL_COURT_LENGTH = 1000.0; //630.0; 
+	public static final double BASKETBALL_COURT_WIDTH = 58.0;
+	public static final double BASKETBALL_COURT_DRIVE_SPEED = 35.0;
 	
 	/** Drivetrain Gyro Drive Settings ****************************************/
 	public static final double kP_GYRO = 0.0175;
