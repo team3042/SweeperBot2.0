@@ -15,12 +15,15 @@ public class Drivetrain_BasketballCourt extends CommandGroup {
   private static final double DRIVE_SPEED = RobotMap.BASKETBALL_COURT_DRIVE_SPEED;
 
   public Drivetrain_BasketballCourt() {
+  //align using sensor here
   for (int i=1; i<6; i++) {
     addSequential(new Drivetrain_GyroStraight(COURT_LENGTH, DRIVE_SPEED));
+    //realign using sensor here
     addSequential(new Drivetrain_GyroTurn(90));
     addSequential(new Drivetrain_GyroStraight(COURT_WIDTH, DRIVE_SPEED));
     addSequential(new Drivetrain_GyroTurn(90));
     addSequential(new Drivetrain_GyroStraight(COURT_LENGTH, DRIVE_SPEED));
+    //realign using sensor here
     addSequential(new Drivetrain_GyroTurn(-90));
     addSequential(new Drivetrain_GyroStraight(COURT_WIDTH, DRIVE_SPEED));
     addSequential(new Drivetrain_GyroTurn(-90));
