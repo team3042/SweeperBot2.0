@@ -77,6 +77,10 @@ public class OI {
 		
 		/** SweeperBot Controls **************************************************/
 		if (IS_SWEEPERBOT) {
+			
+			gamepad.X.whenPressed(new Drivetrain_GyroStraight(36, 24.0)); 
+			gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
+
 			gamepad.A.whenPressed(new Drivetrain_BasketballCourt());
 		}
 	}
