@@ -11,7 +11,7 @@ public class RobotMap {
 	/** Robot selector ********************************************************/
 	public static enum Bot {PBOT, SWEEPERBOT;}
 	// Set the bot to which you intend to push code.
-	private static Bot currentBot = Bot.PBOT;
+	private static Bot currentBot = Bot.SWEEPERBOT;
 
 	public static final boolean IS_PBOT 	= (currentBot == Bot.PBOT);
 	public static final boolean IS_SWEEPERBOT = (currentBot == Bot.SWEEPERBOT);
@@ -21,8 +21,8 @@ public class RobotMap {
 	 * and speed closed-loop commands. For example, if the diameter is given 
 	 * in inches, position will be in inches and speed in inches per second.
 	 */
-	public static final double WHEEL_DIAMETER = (IS_PBOT) ? 4.0 : 4.0; //Measured in inches
-	public static final double ROBOT_WIDTH = (IS_PBOT) ? 15.0 : 16.0; //Measured in inches 
+	public static final double WHEEL_DIAMETER = (IS_PBOT) ? 4.0 : 6.0; //Measured in inches
+	public static final double ROBOT_WIDTH = (IS_PBOT) ? 15.0 : 29.5; //Measured in inches 
 	
 	/** USB ports *************************************************************/					
 	public static final int USB_GAMEPAD = 0;
