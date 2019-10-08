@@ -28,12 +28,14 @@ public class RobotMap {
 	public static final int USB_GAMEPAD = 0;
 
 	/** CAN ID numbers ********************************************************/
-	public static final int CAN_LEFT_MOTOR 	= 		IS_PBOT 	? 3 : 0;
-	public static final int CAN_RIGHT_MOTOR = 		IS_PBOT 	? 9 : 0;
-	public static final int CAN_LEFT_FOLLOWER = 	IS_SWEEPERBOT 	? 0 : 0;
-	public static final int CAN_RIGHT_FOLLOWER = 	IS_SWEEPERBOT 	? 0 : 0;	
+	public static final int CAN_LEFT_MOTOR 	= 		IS_PBOT 	? 3 : 0; //UPDATE!
+	public static final int CAN_RIGHT_MOTOR = 		IS_PBOT 	? 9 : 0; //UPDATE!
+	public static final int CAN_LEFT_FOLLOWER = 	IS_SWEEPERBOT 	? 0 : 0; //UPDATE!
+	public static final int CAN_RIGHT_FOLLOWER = 	IS_SWEEPERBOT 	? 0 : 0; //UPDATE!	
 	
 	/** PCM channels **********************************************************/
+	public static final int BIG_PISTON_SOLENOID =	 0; //UPDATE!
+	public static final int SMALL_PISTON_SOLENOID =	 0; //UPDATE!
 	
 	/** SPI ports *************************************************************/
 	//note that the Gyroscope uses the myRIO Expansion Port (MXP) and is defined in the SPI class (edu.wpi.first.wpilibj.SPI)
@@ -49,8 +51,8 @@ public class RobotMap {
 	public static final boolean HAS_DRIVETRAIN = true;
 	public static final boolean HAS_FOLLOWERS = false;
 	public static final NeutralMode DRIVETRAIN_BRAKE_MODE = NeutralMode.Brake;
-	public static final boolean REVERSE_LEFT_MOTOR = 	(IS_PBOT) ? true : false;
-	public static final boolean REVERSE_RIGHT_MOTOR = 	(IS_PBOT) ? false: false;
+	public static final boolean REVERSE_LEFT_MOTOR = 	(IS_PBOT) ? true : false; 
+	public static final boolean REVERSE_RIGHT_MOTOR = 	(IS_PBOT) ? false: false; 
 	// Maximum Acceleration given in power per second
 	public static final double ACCELERATION_MAX = 1.5;
 	public static final double kF_DRIVE_LEFT = 	(IS_PBOT) 	?  0.1817180616740088  : 0.1817180616740088;
@@ -91,6 +93,10 @@ public class RobotMap {
 	public static final int AUTON_PIDIDX = 0; // used for cascading PID; set to zero
 	public static final int AUTON_HEADING = 0; //unimplemented feature; set to zero
 
+	/** Mop Settings ********************************************/
+	public static final boolean HAS_BIG_PISTON = IS_SWEEPERBOT;
+	public static final boolean HAS_SMALL_PISTON = IS_SWEEPERBOT;
+
 	/** Basketball Court Constants ********************************************/
 	public static final double BASKETBALL_COURT_LENGTH = 1000.0; //630.0; 
 	public static final double BASKETBALL_COURT_WIDTH = 58.0;
@@ -126,5 +132,6 @@ public class RobotMap {
 	public static final Log.Level	LOG_DRIVETRAIN_ENCODERS 	= Log.Level.DEBUG;
 	public static final Log.Level	LOG_DRIVETRAIN_AUTON		= Log.Level.DEBUG;
 	public static final Log.Level	LOG_GYROSCOPE				= Log.Level.DEBUG;
-	public static final Log.Level   LOG_LINE_TRACKER			= Log.Level.TRACE;
+	public static final Log.Level	LOG_BIG_PISTON              = Log.Level.TRACE;
+	public static final Log.Level	LOG_SMALL_PISTON            = Log.Level.TRACE;
 }
