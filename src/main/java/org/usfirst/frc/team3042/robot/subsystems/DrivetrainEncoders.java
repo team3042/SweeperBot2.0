@@ -8,6 +8,7 @@ import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -28,6 +29,7 @@ public class DrivetrainEncoders extends Subsystem {
 	/** Instance Variables ****************************************************/
 	Log log = new Log(LOG_LEVEL, getName());
 	TalonSRX leftEncoder, rightEncoder;
+	Talon sweeperBotLeftEncoder, sweeperBotRightEncoder;
 	double leftPositionZero, rightPositionZero;
 	
 	

@@ -19,7 +19,6 @@ public class Drivetrain extends Subsystem {
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_DRIVETRAIN;
 	private static final int CAN_LEFT_MOTOR = RobotMap.CAN_LEFT_MOTOR;
 	private static final int CAN_RIGHT_MOTOR = RobotMap.CAN_RIGHT_MOTOR;
-	private static final boolean HAS_FOLLOWERS = RobotMap.HAS_FOLLOWERS;
 	private static final boolean HAS_ENCODERS = RobotMap.HAS_ENCODERS;
 	private static final boolean HAS_AUTON = RobotMap.HAS_AUTON;
 	private static final NeutralMode BRAKE_MODE = RobotMap.DRIVETRAIN_BRAKE_MODE;
@@ -37,7 +36,6 @@ public class Drivetrain extends Subsystem {
 	Talon sweeperBotLeftMotor = new Talon(CAN_LEFT_MOTOR);
 	Talon sweeperBotRightMotor =  new Talon(CAN_RIGHT_MOTOR);
 
-	DrivetrainFollowers followers;
 	DrivetrainEncoders encoders;
 	DrivetrainAuton auton;
 
@@ -47,7 +45,6 @@ public class Drivetrain extends Subsystem {
 	public Drivetrain() {
 		log.add("Constructor", LOG_LEVEL);
 		
-		if (HAS_FOLLOWERS) followers = new DrivetrainFollowers();
 		if (HAS_ENCODERS) {
 			encoders = new DrivetrainEncoders(leftMotor, rightMotor);
 			
@@ -55,11 +52,18 @@ public class Drivetrain extends Subsystem {
 					new DrivetrainAuton(leftMotor, rightMotor, encoders);
 		}
 		
-		initMotor(leftMotor, REVERSE_LEFT_MOTOR);
-		initMotor(rightMotor, REVERSE_RIGHT_MOTOR);
+		initSRXMotor(leftMotor, REVERSE_LEFT_MOTOR);
+		initSRXMotor(rightMotor, REVERSE_RIGHT_MOTOR);
+
+		initMotor(sweeperBotLeftMotor, REVERSE_LEFT_MOTOR);
+		initMotor(sweeperBotRightMotor, REVERSE_RIGHT_MOTOR);
 	}
-	private void initMotor(TalonSRX motor, boolean reverse) {
+	private void initSRXMotor(TalonSRX motor, boolean reverse) {
 		motor.setNeutralMode(BRAKE_MODE);
+		motor.setInverted(reverse); 	// affects percent Vbus mode
+	}
+
+	private void initMotor(Talon motor, boolean reverse) {
 		motor.setInverted(reverse); 	// affects percent Vbus mode
 	}
 	

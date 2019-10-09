@@ -47,7 +47,6 @@ public class RobotMap {
 
 	/** Drivetrain Settings ***************************************************/
 	public static final boolean HAS_DRIVETRAIN = true;
-	public static final boolean HAS_FOLLOWERS = false;
 	public static final NeutralMode DRIVETRAIN_BRAKE_MODE = NeutralMode.Brake;
 	public static final boolean REVERSE_LEFT_MOTOR = 	(IS_PBOT) ? true : false; 
 	public static final boolean REVERSE_RIGHT_MOTOR = 	(IS_PBOT) ? false: false; 
@@ -126,7 +125,6 @@ public class RobotMap {
 	public static final Log.Level	LOG_POV_BUTTON				= Log.Level.ERROR;
 	/** Subsystems **/
 	public static final Log.Level	LOG_DRIVETRAIN				= Log.Level.TRACE;
-	public static final Log.Level	LOG_DRIVETRAIN_FOLLOWERS	= Log.Level.TRACE;
 	public static final Log.Level	LOG_DRIVETRAIN_ENCODERS 	= Log.Level.DEBUG;
 	public static final Log.Level	LOG_DRIVETRAIN_AUTON		= Log.Level.DEBUG;
 	public static final Log.Level	LOG_GYROSCOPE				= Log.Level.DEBUG;
