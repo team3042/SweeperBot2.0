@@ -24,18 +24,16 @@ public class RobotMap {
 	public static final double WHEEL_DIAMETER = (IS_PBOT) ? 4.0 : 6.0; //Measured in inches
 	public static final double ROBOT_WIDTH = (IS_PBOT) ? 15.0 : 29.5; //Measured in inches 
 	
-	/** USB ports *************************************************************/					
+	/** USB ports ***************************************************************/					
 	public static final int USB_GAMEPAD = 0;
 
-	/** CAN ID numbers ********************************************************/
-	public static final int CAN_LEFT_MOTOR 	= 		IS_PBOT 	? 3 : 0; //UPDATE!
-	public static final int CAN_RIGHT_MOTOR = 		IS_PBOT 	? 9 : 0; //UPDATE!
-	public static final int CAN_LEFT_FOLLOWER = 	IS_SWEEPERBOT 	? 0 : 0; //UPDATE!
-	public static final int CAN_RIGHT_FOLLOWER = 	IS_SWEEPERBOT 	? 0 : 0; //UPDATE!	
+	/** CAN ID/PDP Channel numbers *********************************************/
+	public static final int CAN_LEFT_MOTOR 	= 		IS_PBOT 	? 3 : 15; 
+	public static final int CAN_RIGHT_MOTOR = 		IS_PBOT 	? 9 : 0; 
 	
 	/** PCM channels **********************************************************/
-	public static final int BIG_PISTON_SOLENOID =	 0; //UPDATE!
-	public static final int SMALL_PISTON_SOLENOID =	 0; //UPDATE!
+	public static final int BIG_PISTON_SOLENOID =	 3; 
+	public static final int SMALL_PISTON_SOLENOID =	 2; 
 	
 	/** SPI ports *************************************************************/
 	//note that the Gyroscope uses the myRIO Expansion Port (MXP) and is defined in the SPI class (edu.wpi.first.wpilibj.SPI)
