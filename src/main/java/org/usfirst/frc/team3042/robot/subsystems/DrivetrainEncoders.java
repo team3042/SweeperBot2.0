@@ -26,8 +26,11 @@ public class DrivetrainEncoders extends Subsystem {
 	
 	
 	/** DrivetrainEncoders ****************************************************/
-	public DrivetrainEncoders() {
+	public DrivetrainEncoders(Encoder leftEncoder1, Encoder rightEncoder1) {
 		log.add("Constructor", LOG_LEVEL);
+
+		leftEncoder = leftEncoder1;
+		rightEncoder = rightEncoder1;
 				
 		initEncoder(leftEncoder, SENSOR_PHASE_LEFT);
 		initEncoder(rightEncoder, SENSOR_PHASE_RIGHT);

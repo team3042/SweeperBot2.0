@@ -4,6 +4,7 @@ import org.usfirst.frc.team3042.lib.Log;
 import org.usfirst.frc.team3042.robot.RobotMap;
 import org.usfirst.frc.team3042.robot.commands.Drivetrain_TankDrive;
 
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -25,6 +26,9 @@ public class Drivetrain extends Subsystem {
 	Talon sweeperBotLeftMotor = new Talon(CAN_LEFT_MOTOR);
 	Talon sweeperBotRightMotor =  new Talon(CAN_RIGHT_MOTOR);
 
+	Encoder leftEncoder = new Encoder(0,1); //Digital Input Pins
+	Encoder rightEncoder = new Encoder(2,3); //Digital Input Pins
+
 	DrivetrainEncoders encoders;
 
 	/** Drivetrain ************************************************************
@@ -34,7 +38,7 @@ public class Drivetrain extends Subsystem {
 		log.add("Constructor", LOG_LEVEL);
 		
 		if (HAS_ENCODERS) {
-			encoders = new DrivetrainEncoders();
+			encoders = new DrivetrainEncoders(leftEncoder, rightEncoder);
 		}
 
 		initMotor(sweeperBotLeftMotor, REVERSE_LEFT_MOTOR);
