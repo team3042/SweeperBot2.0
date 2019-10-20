@@ -1,35 +1,28 @@
 package org.usfirst.frc.team3042.robot;
 
-import org.usfirst.frc.team3042.lib.Log;
-
 import com.ctre.phoenix.motorcontrol.NeutralMode;
+
+import org.usfirst.frc.team3042.lib.Log;
 
 /** RobotMap ******************************************************************
  * The robot configuration file.
  */
 public class RobotMap {
-	/** Robot selector ********************************************************/
-	public static enum Bot {PBOT, SWEEPERBOT;}
-	// Set the bot to which you intend to push code.
-	private static Bot currentBot = Bot.SWEEPERBOT;
-
-	public static final boolean IS_PBOT 	= (currentBot == Bot.PBOT);
-	public static final boolean IS_SWEEPERBOT = (currentBot == Bot.SWEEPERBOT);
 	
 	/** Robot Size Parameters *************************************************
 	 * The units of the wheel diameter determine the units of the position 
 	 * and speed closed-loop commands. For example, if the diameter is given 
 	 * in inches, position will be in inches and speed in inches per second.
 	 */
-	public static final double WHEEL_DIAMETER = (IS_PBOT) ? 4.0 : 6.0; //Measured in inches
-	public static final double ROBOT_WIDTH = (IS_PBOT) ? 15.0 : 29.5; //Measured in inches 
+	public static final double WHEEL_DIAMETER = 6.0; //Measured in inches
+	public static final double ROBOT_WIDTH = 29.5; //Measured in inches 
 	
 	/** USB ports ***************************************************************/					
 	public static final int USB_GAMEPAD = 0;
 
-	/** CAN ID/PDP Channel numbers *********************************************/
-	public static final int CAN_LEFT_MOTOR 	= 		IS_PBOT 	? 3 : 15; 
-	public static final int CAN_RIGHT_MOTOR = 		IS_PBOT 	? 9 : 0; 
+	/** PDP Channel numbers *********************************************/
+	public static final int CAN_LEFT_MOTOR 	=  15; 
+	public static final int CAN_RIGHT_MOTOR =  0; 
 	
 	/** PCM channels **********************************************************/
 	public static final int BIG_PISTON_SOLENOID =	 3; 
@@ -48,31 +41,31 @@ public class RobotMap {
 	/** Drivetrain Settings ***************************************************/
 	public static final boolean HAS_DRIVETRAIN = true;
 	public static final NeutralMode DRIVETRAIN_BRAKE_MODE = NeutralMode.Brake;
-	public static final boolean REVERSE_LEFT_MOTOR = 	(IS_PBOT) ? true : false; 
-	public static final boolean REVERSE_RIGHT_MOTOR = 	(IS_PBOT) ? false: false; 
+	public static final boolean REVERSE_LEFT_MOTOR = false; 
+	public static final boolean REVERSE_RIGHT_MOTOR = false; 
 	// Maximum Acceleration given in power per second
 	public static final double ACCELERATION_MAX = 1.5;
-	public static final double kF_DRIVE_LEFT = 	(IS_PBOT) 	?  0.1817180616740088  : 0.1817180616740088;
-	public static final double kF_DRIVE_RIGHT = (IS_PBOT) 	?  0.16686239968682717 : 0.16686239968682717;
+	public static final double kF_DRIVE_LEFT =   0.1817180616740088;
+	public static final double kF_DRIVE_RIGHT =  0.16686239968682717;
 
 	
 	/** Drivetrain Encoder Settings *******************************************/
-	public static final boolean HAS_ENCODERS = true;
+	public static final boolean HAS_ENCODERS = false;
 	//Encoder counts per revolution
 	//In quadrature mode, actual counts will be 4x this; e.g., 360 -> 1440
 	public static final int COUNTS_PER_REVOLUTION = 1440;
 	//How often the encoders update on the CAN, in milliseconds
 	public static final int ENCODER_FRAME_RATE = 10;
-	public static final boolean SENSOR_PHASE_LEFT = 	(IS_PBOT) ? false: false;
-	public static final boolean SENSOR_PHASE_RIGHT = 	(IS_PBOT) ? false: false;
+	public static final boolean SENSOR_PHASE_LEFT =  false;
+	public static final boolean SENSOR_PHASE_RIGHT = false;
 	
 	/** Drivetrain Autonomous Settings ****************************************/
 	public static final boolean HAS_AUTON = HAS_ENCODERS;
 	public static final int AUTON_PROFILE = 0;
-	public static final double kP_AUTON = 		(IS_PBOT) 		? 0.4 : 0.4;
-	public static final double kI_AUTON = 		(IS_PBOT) 		? 0.0 : 0.0;
-	public static final double kD_AUTON = 		(IS_PBOT) 		? 0.8 : 0.8;
-	public static final int I_ZONE_AUTON =		(IS_PBOT)		? 0   : 0;
+	public static final double kP_AUTON =  0.4;
+	public static final double kI_AUTON =  0.0;
+	public static final double kD_AUTON =  0.8;
+	public static final int I_ZONE_AUTON =	 0;
 	//The rate of pushing motion profile points to the talon, in ms
 	public static final int AUTON_FRAME_RATE = 10;
 	//Parameters for calibrating the F-gain
@@ -91,8 +84,8 @@ public class RobotMap {
 	public static final int AUTON_HEADING = 0; //unimplemented feature; set to zero
 
 	/** Mop Settings ********************************************/
-	public static final boolean HAS_BIG_PISTON = IS_SWEEPERBOT;
-	public static final boolean HAS_SMALL_PISTON = IS_SWEEPERBOT;
+	public static final boolean HAS_BIG_PISTON = true;
+	public static final boolean HAS_SMALL_PISTON = true;
 
 	/** Basketball Court Constants ********************************************/
 	public static final double BASKETBALL_COURT_LENGTH = 1000.0; //630.0; 
