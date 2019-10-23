@@ -34,7 +34,7 @@ public class RobotMap {
 	//see http://www.ni.com/pdf/manuals/374474a.pdf for additional info on the RoboRio
 	
 	/** OI Settings ***********************************************************/
-	public static final double JOYSTICK_DRIVE_SCALE = 0.5;
+	public static final double JOYSTICK_DRIVE_SCALE = .75;
 	public static final double TRIGGER_SPINNER_SCALE = 0.1;
 	public static final double JOYSTICK_DEAD_ZONE = 0.0;
 
@@ -44,7 +44,7 @@ public class RobotMap {
 	public static final boolean REVERSE_LEFT_MOTOR = false; 
 	public static final boolean REVERSE_RIGHT_MOTOR = true; 
 	// Maximum Acceleration given in power per second
-	public static final double ACCELERATION_MAX = 1.5;
+	public static final double ACCELERATION_MAX = 3.0;
 	public static final double kF_DRIVE_LEFT =   0.1817180616740088;
 	public static final double kF_DRIVE_RIGHT =  0.16686239968682717;
 
@@ -97,7 +97,7 @@ public class RobotMap {
 	public static final double kI_GYRO = 0.0;
 	public static final double kD_GYRO = 0.0170;
 	public static final double ANGLE_TOLERANCE = 2.0;
-	public static final double MAX_SPEED_GYRO = 0.2;
+	public static final double MAX_SPEED_GYRO = 0.5;
 	public static final double kI_GYRO_INTERVAL = 0.0;
 	
 	/** Gyroscope Settings ****************************************************/
