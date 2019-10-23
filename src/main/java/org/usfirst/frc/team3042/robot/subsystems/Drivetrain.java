@@ -26,8 +26,8 @@ public class Drivetrain extends Subsystem {
 	Talon sweeperBotLeftMotor = new Talon(CAN_LEFT_MOTOR);
 	Talon sweeperBotRightMotor =  new Talon(CAN_RIGHT_MOTOR);
 
-	Encoder leftEncoder = new Encoder(0,1); //UPDATE Digital Input Pins
-	Encoder rightEncoder = new Encoder(2,3); //UPDATE Digital Input Pins
+	Encoder leftEncoder = new Encoder(0,1); 
+	Encoder rightEncoder = new Encoder(2,3);
 
 	DrivetrainEncoders encoders;
 
@@ -58,6 +58,7 @@ public class Drivetrain extends Subsystem {
 	
 	/** Methods for setting the motors in Percent Vbus mode ********************/
 	public void setPower(double leftPower, double rightPower) {
+
 		leftPower = safetyCheck(leftPower);
 		rightPower = safetyCheck(rightPower);
 

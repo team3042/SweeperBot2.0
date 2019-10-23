@@ -21,8 +21,8 @@ public class RobotMap {
 	public static final int USB_GAMEPAD = 0;
 
 	/** PDP Channel numbers *********************************************/
-	public static final int CAN_LEFT_MOTOR 	=  15; 
-	public static final int CAN_RIGHT_MOTOR =  0; 
+	public static final int CAN_LEFT_MOTOR 	=  3; 
+	public static final int CAN_RIGHT_MOTOR =  4; 
 	
 	/** PCM channels **********************************************************/
 	public static final int BIG_PISTON_SOLENOID =	 3; 
@@ -42,7 +42,7 @@ public class RobotMap {
 	public static final boolean HAS_DRIVETRAIN = true;
 	public static final NeutralMode DRIVETRAIN_BRAKE_MODE = NeutralMode.Brake;
 	public static final boolean REVERSE_LEFT_MOTOR = false; 
-	public static final boolean REVERSE_RIGHT_MOTOR = false; 
+	public static final boolean REVERSE_RIGHT_MOTOR = true; 
 	// Maximum Acceleration given in power per second
 	public static final double ACCELERATION_MAX = 1.5;
 	public static final double kF_DRIVE_LEFT =   0.1817180616740088;
@@ -50,7 +50,7 @@ public class RobotMap {
 
 	
 	/** Drivetrain Encoder Settings *******************************************/
-	public static final boolean HAS_ENCODERS = false;
+	public static final boolean HAS_ENCODERS = true;
 	//Encoder counts per revolution
 	//In quadrature mode, actual counts will be 4x this; e.g., 360 -> 1440
 	public static final int COUNTS_PER_REVOLUTION = 1440;
