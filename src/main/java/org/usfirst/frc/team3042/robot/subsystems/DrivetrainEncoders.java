@@ -4,10 +4,7 @@ import org.usfirst.frc.team3042.lib.Log;
 import org.usfirst.frc.team3042.robot.RobotMap;
 import org.usfirst.frc.team3042.robot.commands.DrivetrainEncoders_Dashboard;
 
-import com.ctre.phoenix.motorcontrol.FeedbackDevice;
-import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
-
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 
@@ -18,37 +15,30 @@ public class DrivetrainEncoders extends Subsystem {
 	/** Configuration Constants ***********************************************/
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_DRIVETRAIN_ENCODERS;
 	private static final int COUNTS_PER_REVOLUTION = RobotMap.COUNTS_PER_REVOLUTION;
-	private static final int FRAME_RATE = RobotMap.ENCODER_FRAME_RATE;
-	private static final int TIMEOUT = RobotMap.AUTON_TIMEOUT;
-	private static final int PIDIDX = RobotMap.AUTON_PIDIDX;
 	private static final boolean SENSOR_PHASE_LEFT = RobotMap.SENSOR_PHASE_LEFT;
 	private static final boolean SENSOR_PHASE_RIGHT = RobotMap.SENSOR_PHASE_RIGHT;
 
 	
 	/** Instance Variables ****************************************************/
 	Log log = new Log(LOG_LEVEL, getName());
-	TalonSRX leftEncoder, rightEncoder;
+	Encoder leftEncoder, rightEncoder;
 	double leftPositionZero, rightPositionZero;
 	
 	
 	/** DrivetrainEncoders ****************************************************/
-	public DrivetrainEncoders(TalonSRX leftMotor, TalonSRX rightMotor) {
+	public DrivetrainEncoders(Encoder leftEncoder1, Encoder rightEncoder1) {
 		log.add("Constructor", LOG_LEVEL);
-		
-		leftEncoder = leftMotor;
-		rightEncoder = rightMotor;
+
+		leftEncoder = leftEncoder1;
+		rightEncoder = rightEncoder1;
 				
 		initEncoder(leftEncoder, SENSOR_PHASE_LEFT);
 		initEncoder(rightEncoder, SENSOR_PHASE_RIGHT);
 													
 		reset();
 	}
-	private void initEncoder(TalonSRX encoder, boolean sensorPhase) {
-		encoder.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 
-				PIDIDX, TIMEOUT);
-		encoder.setStatusFramePeriod(StatusFrameEnhanced.Status_2_Feedback0, 
-				FRAME_RATE, TIMEOUT);
-		encoder.setSensorPhase(sensorPhase); 	// affects closed-loop mode
+	private void initEncoder(Encoder encoder, boolean sensorPhase) {
+		encoder.setReverseDirection(sensorPhase); 	// affects closed-loop mode
 	}
 	
 	
@@ -62,10 +52,10 @@ public class DrivetrainEncoders extends Subsystem {
 	
 	/** reset *****************************************************************/
 	public void reset() {
-		int leftCounts = leftEncoder.getSelectedSensorPosition(PIDIDX);
+		int leftCounts = leftEncoder.get();
 		leftPositionZero = countsToRev(leftCounts);
 		
-		int rightCounts = rightEncoder.getSelectedSensorPosition(PIDIDX);
+		int rightCounts = rightEncoder.get();
 		rightPositionZero = countsToRev(rightCounts);
 	}
 	public void setToZero() {
@@ -79,22 +69,22 @@ public class DrivetrainEncoders extends Subsystem {
 	 * Speed returns counts per 100ms and is converted to RPM
 	 */
 	public double getLeftPosition() {
-		int counts = leftEncoder.getSelectedSensorPosition(PIDIDX);
+		int counts = leftEncoder.get();
 		return countsToRev(counts) - leftPositionZero;
 	}
 	public double getRightPosition() {
-		int counts = rightEncoder.getSelectedSensorPosition(PIDIDX);
+		int counts = rightEncoder.get();
 		return countsToRev(counts) - rightPositionZero;
 	}
 	private double countsToRev(int counts) {
 		return (double)counts / COUNTS_PER_REVOLUTION;
 	}
 	public double getLeftSpeed() {
-		int cp100ms = leftEncoder.getSelectedSensorVelocity(PIDIDX);
+		int cp100ms = leftEncoder.get();
 		return cp100msToRPM(cp100ms);
 	}
 	public double getRightSpeed() {
-		int cp100ms = rightEncoder.getSelectedSensorVelocity(PIDIDX);
+		int cp100ms = rightEncoder.get();
 		return cp100msToRPM(cp100ms);
 	}
 	private double cp100msToRPM(int cp100ms) {

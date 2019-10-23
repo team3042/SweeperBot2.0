@@ -1,32 +1,33 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
-
 package org.usfirst.frc.team3042.robot.commands;
+
+import org.usfirst.frc.team3042.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class Drivetrain_BasketballCourt extends CommandGroup {
   /**
-   * Add your docs here.
+   * Code for sweeping the basketball court autonomously 
    */
+
+  /** Configuration Constants ***********************************************/
+  private static final double COURT_LENGTH = RobotMap.BASKETBALL_COURT_LENGTH;
+  private static final double COURT_WIDTH = RobotMap.BASKETBALL_COURT_WIDTH;
+  private static final double DRIVE_SPEED = RobotMap.BASKETBALL_COURT_DRIVE_SPEED;
+
   public Drivetrain_BasketballCourt() {
-    // Add Commands here:
-    // e.g. addSequential(new Command1());
-    // addSequential(new Command2());
-    // these will run in order.
-    addSequential(new Drivetrain_GyroStraight(36, 24));
+  //align using sensor here
+  for (int i=1; i<6; i++) {
+    addSequential(new Drivetrain_GyroStraight(COURT_LENGTH, DRIVE_SPEED));
+    //realign using sensor here
     addSequential(new Drivetrain_GyroTurn(90));
-    addSequential(new Drivetrain_GyroStraight(12, 24));
+    addSequential(new Drivetrain_GyroStraight(COURT_WIDTH, DRIVE_SPEED));
     addSequential(new Drivetrain_GyroTurn(90));
-    addSequential(new Drivetrain_GyroStraight(36, 24));
+    addSequential(new Drivetrain_GyroStraight(COURT_LENGTH, DRIVE_SPEED));
+    //realign using sensor here
     addSequential(new Drivetrain_GyroTurn(-90));
-    addSequential(new Drivetrain_GyroStraight(12, 24));
+    addSequential(new Drivetrain_GyroStraight(COURT_WIDTH, DRIVE_SPEED));
     addSequential(new Drivetrain_GyroTurn(-90));
-    addSequential(new Drivetrain_GyroStraight(36, 24));
+  }
     // To run multiple commands at the same time,
     // use addParallel()
     // e.g. addParallel(new Command1());
