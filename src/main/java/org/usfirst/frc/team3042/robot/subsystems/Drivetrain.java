@@ -26,8 +26,8 @@ public class Drivetrain extends Subsystem {
 	Talon sweeperBotLeftMotor = new Talon(CAN_LEFT_MOTOR);
 	Talon sweeperBotRightMotor =  new Talon(CAN_RIGHT_MOTOR);
 
-	Encoder leftEncoder = new Encoder(0,1); 
-	Encoder rightEncoder = new Encoder(2,3);
+	Encoder leftEncoder = new Encoder(1,0); 
+	Encoder rightEncoder = new Encoder(3,2);
 
 	DrivetrainEncoders encoders;
 

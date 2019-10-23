@@ -47,7 +47,7 @@ public class OI {
 		
 		/** SweeperBot Controls **************************************************/
 			
-		gamepad.X.whenPressed(new Drivetrain_GyroStraight(5, 50.0)); 
+		gamepad.X.whenPressed(new Drivetrain_GyroStraight(12, 50.0)); 
 		gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
 
 		gamepad.A.whenPressed(new BigPiston_Toggle());
