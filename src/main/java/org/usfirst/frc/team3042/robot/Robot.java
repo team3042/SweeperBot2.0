@@ -1,10 +1,11 @@
 package org.usfirst.frc.team3042.robot;
 
 import org.usfirst.frc.team3042.lib.Log;
+import org.usfirst.frc.team3042.robot.subsystems.BigPiston;
 import org.usfirst.frc.team3042.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team3042.robot.subsystems.Gyroscope;
+import org.usfirst.frc.team3042.robot.subsystems.RightSight;
 import org.usfirst.frc.team3042.robot.subsystems.SmallPiston;
-import org.usfirst.frc.team3042.robot.subsystems.BigPiston;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -26,6 +27,7 @@ public class Robot extends TimedRobot {
 	private static final boolean HAS_GYROSCOPE = RobotMap.HAS_GYROSCOPE;
 	private static final boolean HAS_SMALL_PISTON = RobotMap.HAS_SMALL_PISTON;
 	private static final boolean HAS_BIG_PISTON = RobotMap.HAS_BIG_PISTON;
+	private static final boolean HAS_RIGHTSIGHT = RobotMap.HAS_RIGHTSIGHT;
 	
 	/** Create Subsystems *****************************************************/
 	private Log log = new Log(LOG_LEVEL, "Robot");
@@ -33,6 +35,7 @@ public class Robot extends TimedRobot {
 	public static final Gyroscope 	gyroscope 	= (HAS_GYROSCOPE) 	? new Gyroscope() 	: null;
 	public static final SmallPiston small_piston = (HAS_SMALL_PISTON) ? new SmallPiston() : null;
 	public static final BigPiston big_piston = (HAS_BIG_PISTON) ? new BigPiston() : null;
+	public static final RightSight rightsight = (HAS_RIGHTSIGHT) ? new RightSight() : null;
 	public static OI oi;
 
 	Command autonomousCommand;

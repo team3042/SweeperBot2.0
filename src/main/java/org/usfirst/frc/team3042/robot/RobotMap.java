@@ -87,6 +87,9 @@ public class RobotMap {
 	public static final boolean HAS_BIG_PISTON = true;
 	public static final boolean HAS_SMALL_PISTON = true;
 
+	/** RightSight Sensor Settings ******************************/
+	public static final boolean HAS_RIGHTSIGHT = true;
+
 	/** Basketball Court Constants ********************************************/
 	public static final double BASKETBALL_COURT_LENGTH = 1000.0; //630.0; 
 	public static final double BASKETBALL_COURT_WIDTH = 58.0;
@@ -123,4 +126,5 @@ public class RobotMap {
 	public static final Log.Level	LOG_GYROSCOPE				= Log.Level.DEBUG;
 	public static final Log.Level	LOG_BIG_PISTON              = Log.Level.TRACE;
 	public static final Log.Level	LOG_SMALL_PISTON            = Log.Level.TRACE;
+	public static final Log.Level	LOG_RIGHTSIGHT           = Log.Level.TRACE;
 }
