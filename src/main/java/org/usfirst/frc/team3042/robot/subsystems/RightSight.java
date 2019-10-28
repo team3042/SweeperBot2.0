@@ -24,7 +24,7 @@ public class RightSight extends Subsystem {
 	 * Set the default command for the subsystem.
 	 */
 	public void initDefaultCommand() {
-		//setDefaultCommand(new CommandName());
+		setDefaultCommand(null);
 	}
 	
 	/** Command Methods *******************************************************/
