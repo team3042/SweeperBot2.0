@@ -2,6 +2,7 @@ package org.usfirst.frc.team3042.robot;
 
 import org.usfirst.frc.team3042.lib.Log;
 import org.usfirst.frc.team3042.robot.commands.BigPiston_Toggle;
+import org.usfirst.frc.team3042.robot.commands.CleanMop;
 //import org.usfirst.frc.team3042.lib.Path;
 //import org.usfirst.frc.team3042.robot.commands.DrivetrainAuton_Drive;
 import org.usfirst.frc.team3042.robot.commands.Drivetrain_BasketballCourt;
@@ -50,8 +51,7 @@ public class OI {
 		gamepad.X.whenPressed(new Drivetrain_GyroStraight(12, 50.0)); 
 		gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
 
-		gamepad.A.whenPressed(new BigPiston_Toggle());
-		gamepad.B.whenPressed(new SmallPiston_Toggle());
+		gamepad.A.whenPressed(new CleanMop());
 
 		gamepad.Start.whenPressed(new Drivetrain_BasketballCourt());
 	}
