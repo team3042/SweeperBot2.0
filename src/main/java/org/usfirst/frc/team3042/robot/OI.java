@@ -51,7 +51,10 @@ public class OI {
 		gamepad.X.whenPressed(new Drivetrain_GyroStraight(12, 50.0)); 
 		gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
 
-		gamepad.A.whenPressed(new CleanMop());
+		gamepad.A.whenPressed(new BigPiston_Toggle());
+		gamepad.B.whenPressed(new SmallPiston_Toggle());
+
+		gamepad.Back.whenPressed(new CleanMop());
 
 		gamepad.Start.whenPressed(new Drivetrain_BasketballCourt());
 	}
