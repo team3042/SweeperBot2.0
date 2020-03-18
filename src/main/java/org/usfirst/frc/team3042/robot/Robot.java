@@ -22,17 +22,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends TimedRobot { 
 	/** Configuration Constants ***********************************************/
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_ROBOT;
-	private static final boolean HAS_DRIVETRAIN = RobotMap.HAS_DRIVETRAIN;
-	private static final boolean HAS_GYROSCOPE = RobotMap.HAS_GYROSCOPE;
-	private static final boolean HAS_SMALL_PISTON = RobotMap.HAS_SMALL_PISTON;
-	private static final boolean HAS_BIG_PISTON = RobotMap.HAS_BIG_PISTON;
-	
+
 	/** Create Subsystems *****************************************************/
 	private Log log = new Log(LOG_LEVEL, "Robot");
-	public static final Drivetrain 	drivetrain 	= (HAS_DRIVETRAIN) 	? new Drivetrain() 	: null;
-	public static final Gyroscope 	gyroscope 	= (HAS_GYROSCOPE) 	? new Gyroscope() 	: null;
-	public static final SmallPiston small_piston = (HAS_SMALL_PISTON) ? new SmallPiston() : null;
-	public static final BigPiston big_piston = (HAS_BIG_PISTON) ? new BigPiston() : null;
+	public static final Drivetrain 	drivetrain 	= new Drivetrain();
+	public static final Gyroscope 	gyroscope 	= new Gyroscope();
+	public static final SmallPiston small_piston = new SmallPiston();
+	public static final BigPiston big_piston = new BigPiston();
 	public static OI oi;
 
 	Command autonomousCommand;

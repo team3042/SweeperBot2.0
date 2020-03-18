@@ -7,6 +7,7 @@ import org.usfirst.frc.team3042.robot.commands.Drivetrain_TankDrive;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
 /** Drivetrain ****************************************************************
  * The drivetrain subsystem for the robot.
@@ -16,12 +17,11 @@ public class Drivetrain extends Subsystem {
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_DRIVETRAIN;
 	private static final int CAN_LEFT_MOTOR = RobotMap.CAN_LEFT_MOTOR;
 	private static final int CAN_RIGHT_MOTOR = RobotMap.CAN_RIGHT_MOTOR;
-	private static final boolean HAS_ENCODERS = RobotMap.HAS_ENCODERS;
 	private static final boolean REVERSE_LEFT_MOTOR = RobotMap.REVERSE_LEFT_MOTOR;
 	private static final boolean REVERSE_RIGHT_MOTOR = RobotMap.REVERSE_RIGHT_MOTOR;
 	
 	/** Instance Variables ****************************************************/
-	Log log = new Log(LOG_LEVEL, getName());
+	Log log = new Log(LOG_LEVEL, SendableRegistry.getName(this));
 
 	Talon sweeperBotLeftMotor = new Talon(CAN_LEFT_MOTOR);
 	Talon sweeperBotRightMotor =  new Talon(CAN_RIGHT_MOTOR);
@@ -37,9 +37,7 @@ public class Drivetrain extends Subsystem {
 	public Drivetrain() {
 		log.add("Constructor", LOG_LEVEL);
 		
-		if (HAS_ENCODERS) {
 			encoders = new DrivetrainEncoders(leftEncoder, rightEncoder);
-		}
 
 		initMotor(sweeperBotLeftMotor, REVERSE_LEFT_MOTOR);
 		initMotor(sweeperBotRightMotor, REVERSE_RIGHT_MOTOR);

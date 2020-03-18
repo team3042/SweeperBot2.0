@@ -1,6 +1,7 @@
- package org.usfirst.frc.team3042.robot.commands;
+package org.usfirst.frc.team3042.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team3042.lib.Log;
@@ -18,7 +19,7 @@ public class Gyroscope_Dashboard extends Command {
 	
 	
 	/** Instance Variables ****************************************************/
-	Log log = new Log(LOG_LEVEL, getName());
+	Log log = new Log(LOG_LEVEL, SendableRegistry.getName(this));
 	Gyroscope gyroscope = Robot.gyroscope;
 	
 	

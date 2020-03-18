@@ -6,6 +6,7 @@ import org.usfirst.frc.team3042.robot.commands.DrivetrainEncoders_Dashboard;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
 
 /** DrivetrainEncoders ***********************************************************
@@ -20,7 +21,7 @@ public class DrivetrainEncoders extends Subsystem {
 
 	
 	/** Instance Variables ****************************************************/
-	Log log = new Log(LOG_LEVEL, getName());
+	Log log = new Log(LOG_LEVEL, SendableRegistry.getName(this));
 	Encoder leftEncoder, rightEncoder;
 	double leftPositionZero, rightPositionZero;
 	
