@@ -1,6 +1,7 @@
- package org.usfirst.frc.team3042.robot.commands;
+package org.usfirst.frc.team3042.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
 import org.usfirst.frc.team3042.lib.Log;
 import org.usfirst.frc.team3042.robot.Robot;
@@ -26,7 +27,7 @@ public class Drivetrain_GyroStraight extends Command {
 
 	
 	/** Instance Variables ****************************************************/
-	Log log = new Log(LOG_LEVEL, getName());
+	Log log = new Log(LOG_LEVEL, SendableRegistry.getName(this));
 	Drivetrain drivetrain = Robot.drivetrain;
 	DrivetrainEncoders encoders = Robot.drivetrain.getEncoders();
 	Gyroscope gyroscope = Robot.gyroscope;

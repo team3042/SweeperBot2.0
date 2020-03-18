@@ -5,6 +5,7 @@ import org.usfirst.frc.team3042.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
 /** Small Piston ****************************************************************
  * The Small piston subsystem for the robot.
@@ -16,7 +17,7 @@ public class SmallPiston extends Subsystem {
 	private static final boolean open = false;
 	
 	/** Instance Variables ****************************************************/
-	Log log = new Log(LOG_LEVEL, getName());
+	Log log = new Log(LOG_LEVEL, SendableRegistry.getName(this));
 	Solenoid smallPistonSolenoid = new Solenoid(ID);
 	boolean isOpen = open;
 

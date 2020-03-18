@@ -39,7 +39,6 @@ public class RobotMap {
 	public static final double JOYSTICK_DEAD_ZONE = 0.0;
 
 	/** Drivetrain Settings ***************************************************/
-	public static final boolean HAS_DRIVETRAIN = true;
 	public static final NeutralMode DRIVETRAIN_BRAKE_MODE = NeutralMode.Brake;
 	public static final boolean REVERSE_LEFT_MOTOR = false; 
 	public static final boolean REVERSE_RIGHT_MOTOR = true; 
@@ -50,7 +49,6 @@ public class RobotMap {
 
 	
 	/** Drivetrain Encoder Settings *******************************************/
-	public static final boolean HAS_ENCODERS = true;
 	//Encoder counts per revolution
 	//In quadrature mode, actual counts will be 4x this; e.g., 360 -> 1440
 	public static final int COUNTS_PER_REVOLUTION = 1440;
@@ -60,7 +58,6 @@ public class RobotMap {
 	public static final boolean SENSOR_PHASE_RIGHT = false;
 	
 	/** Drivetrain Autonomous Settings ****************************************/
-	public static final boolean HAS_AUTON = HAS_ENCODERS;
 	public static final int AUTON_PROFILE = 0;
 	public static final double kP_AUTON =  0.4;
 	public static final double kI_AUTON =  0.0;
@@ -84,8 +81,6 @@ public class RobotMap {
 	public static final int AUTON_HEADING = 0; //unimplemented feature; set to zero
 
 	/** Mop Settings ********************************************/
-	public static final boolean HAS_BIG_PISTON = true;
-	public static final boolean HAS_SMALL_PISTON = true;
 
 	/** Basketball Court Constants ********************************************/
 	public static final double BASKETBALL_COURT_LENGTH = 1000.0; //630.0; 
@@ -101,7 +96,6 @@ public class RobotMap {
 	public static final double kI_GYRO_INTERVAL = 0.0;
 	
 	/** Gyroscope Settings ****************************************************/
-	public static final boolean HAS_GYROSCOPE = true;
 	public static final double GYROSCOPE_SCALE = 1.0;
 
 	/** Logger Settings *******************************************************/

@@ -1,6 +1,7 @@
 package org.usfirst.frc.team3042.robot.commands;
 
 import edu.wpi.first.wpilibj.command.InstantCommand;
+import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
 import org.usfirst.frc.team3042.lib.Log;
 import org.usfirst.frc.team3042.robot.Robot;
@@ -12,7 +13,7 @@ public class BigPiston_Toggle extends InstantCommand {
    private static final Log.Level LOG_LEVEL = RobotMap.LOG_SMALL_PISTON;
 
    /** Instance Variables ****************************************************/
-  Log log = new Log(LOG_LEVEL, getName());
+  Log log = new Log(LOG_LEVEL, SendableRegistry.getName(this));
 	BigPiston big_piston = Robot.big_piston;
 
   public BigPiston_Toggle() {
