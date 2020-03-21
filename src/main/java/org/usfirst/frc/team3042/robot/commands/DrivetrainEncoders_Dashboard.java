@@ -54,13 +54,13 @@ public class DrivetrainEncoders_Dashboard extends Command {
 		double leftSpeed = encoders.getLeftSpeed();
 		double rightSpeed = encoders.getRightSpeed();
 
-		//Convert to length units, based on units of wheel diameter parameter
+		// Convert to length units, based on units of wheel diameter parameter
 		leftPosition *= CIRCUMFRENCE;
 		rightPosition *= CIRCUMFRENCE;
 		leftSpeed *=  CIRCUMFRENCE;
 		rightSpeed *=  CIRCUMFRENCE;
 		
-		//convert speed to per second instead of per minute
+		// Convert speed to per second instead of per minute
 		leftSpeed /= 60.0;
 		rightSpeed /= 60.0;
 		

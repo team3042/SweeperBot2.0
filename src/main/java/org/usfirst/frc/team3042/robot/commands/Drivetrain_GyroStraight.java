@@ -47,10 +47,10 @@ public class Drivetrain_GyroStraight extends Command {
 		log.add("Constructor", Log.Level.TRACE);
 		requires(drivetrain);
 		
-		/** convert distance to revolutions *************************/
+		// Convert distance to revolutions
 		goalDistance = distance / CIRCUMFRENCE;
 		
-		/** Find the power level for the given speed ****************/
+		// Find the power level for the given speed
 		double rpm = speed * 60.0 / CIRCUMFRENCE;		
 		leftPower = encoders.rpmToPower(rpm, kF_LEFT);
 		rightPower = encoders.rpmToPower(rpm, kF_RIGHT);

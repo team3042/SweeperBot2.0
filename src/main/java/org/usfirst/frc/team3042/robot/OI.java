@@ -45,8 +45,7 @@ public class OI {
 		driveAxisRight = GAMEPAD_RIGHT_Y_AXIS;
 		
 		
-		/** SweeperBot Controls **************************************************/
-			
+		/** SweeperBot Controls ***********************************************/	
 		gamepad.X.whenPressed(new Drivetrain_GyroStraight(12, 50.0)); 
 		gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
 
@@ -76,7 +75,9 @@ public class OI {
 		return joystickValue;
 	}
 	private double checkDeadZone(double joystickValue) {
-		if (Math.abs(joystickValue) < JOYSTICK_DEAD_ZONE) joystickValue = 0.0;
+		if (Math.abs(joystickValue) < JOYSTICK_DEAD_ZONE) {
+			joystickValue = 0.0;
+		}
 		return joystickValue;
 	}
 	

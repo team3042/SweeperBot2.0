@@ -9,7 +9,6 @@ import org.usfirst.frc.team3042.robot.Robot;
 import org.usfirst.frc.team3042.robot.RobotMap;
 import org.usfirst.frc.team3042.robot.subsystems.Gyroscope;
 
-
 /** Gyroscope_Dashboard *******************************************************
  * Display the gyroscope angle on the dashboard
  */

@@ -42,9 +42,10 @@ public class Robot extends TimedRobot {
 		log.add("Robot Init", Log.Level.TRACE);
 		
 		oi = new OI();
-		/*Autonomous*/
-		//chooser.setDefaultOption("Default Auto", new ExampleCommand());
-		//chooser.addOption("My Auto", new ExampleCommand());
+		/** Autonomous
+		 * chooser.setDefaultOption("Default Auto", new ExampleCommand());
+		 * chooser.addOption("My Auto", new ExampleCommand());
+		 */
 		SmartDashboard.putData("Auto Mode", chooser);
 	}
 
@@ -73,8 +74,9 @@ public class Robot extends TimedRobot {
 		autonomousCommand = chooser.getSelected();
 
 		// schedule the autonomous command (example)
-		if (autonomousCommand != null)
+		if (autonomousCommand != null) {
 			autonomousCommand.start();
+		}
 	}
 	
 	/** autonomousPeriodic ****************************************************
@@ -90,12 +92,14 @@ public class Robot extends TimedRobot {
 	public void teleopInit() {
 		log.add("Teleop Init", Log.Level.TRACE);
 		
-		// This makes sure that the autonomous stops running when
-		// teleop starts running. If you want the autonomous to
-		// continue until interrupted by another command, remove
-		// this line or comment it out.
-		if (autonomousCommand != null)
+		/** This makes sure that the autonomous stops running when
+		 * teleop starts running. If you want the autonomous to
+		 * continue until interrupted by another command, remove
+		 * this line or comment it out.
+		 */
+		if (autonomousCommand != null) {
 			autonomousCommand.cancel();
+		}
 	}
 
 	/** teleopPeriodic ********************************************************
