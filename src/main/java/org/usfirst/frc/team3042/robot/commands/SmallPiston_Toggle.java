@@ -8,9 +8,6 @@ import org.usfirst.frc.team3042.robot.Robot;
 import org.usfirst.frc.team3042.robot.RobotMap;
 import org.usfirst.frc.team3042.robot.subsystems.SmallPiston;
 
-/** Gyroscope_Dashboard *****************************************************
- * Display the gyroscope angle on the dashboard
- */
 public class SmallPiston_Toggle extends InstantCommand {
   /** Configuration Constants ***********************************************/
   private static final Log.Level LOG_LEVEL = RobotMap.LOG_SMALL_PISTON;
@@ -19,9 +16,6 @@ public class SmallPiston_Toggle extends InstantCommand {
   Log log = new Log(LOG_LEVEL, SendableRegistry.getName(this));
   SmallPiston small_piston = Robot.small_piston;
 
-  /** initialize ************************************************************
-	 * Called just before this Command runs the first time
-	 */
   public SmallPiston_Toggle() {
     super();
     requires(small_piston);

@@ -2,17 +2,14 @@ package org.usfirst.frc.team3042.robot;
 
 import org.usfirst.frc.team3042.lib.Log;
 import org.usfirst.frc.team3042.robot.commands.BigPiston_Toggle;
-//import org.usfirst.frc.team3042.lib.Path;
-//import org.usfirst.frc.team3042.robot.commands.DrivetrainAuton_Drive;
-import org.usfirst.frc.team3042.robot.commands.Drivetrain_BasketballCourt;
+import org.usfirst.frc.team3042.robot.commands.Autonomous.Drivetrain_BasketballCourt;
 import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroStraight;
 import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroTurn;
 import org.usfirst.frc.team3042.robot.commands.SmallPiston_Toggle;
 
 /** OI ************************************************************************
  * This class is the glue that binds the controls on the physical operator
- * interface to the commands and command groups that allow control of the robot.
- */
+ * interface to the commands and command groups that allow control of the robot */
 public class OI {	
 	/** Configuration Constants ***********************************************/
 	private static final int USB_GAMEPAD = RobotMap.USB_GAMEPAD;
@@ -31,8 +28,7 @@ public class OI {
 	int driveAxisLeft, driveAxisRight;
 
 	/** OI ********************************************************************
-	 * Assign commands to the buttons and triggers
-	 */
+	 * Assign commands to the buttons and triggers */
 	public OI() {
 		log.add("OI Constructor", Log.Level.TRACE);
 		
@@ -56,8 +52,7 @@ public class OI {
 	}
 	
 	/** Access to the driving axes values *************************************
-	 * A negative has been added to make pushing forward positive.
-	 */
+	 * A negative has been added to make pushing forward positive */
 	public double getDriveLeft() {
 		double joystickValue = joyLeft.getRawAxis(driveAxisLeft);
 		joystickValue = scaleJoystick(joystickValue);

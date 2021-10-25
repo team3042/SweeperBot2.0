@@ -10,8 +10,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
 /** Drivetrain ****************************************************************
- * The drivetrain subsystem for the robot.
- */
+ * The drivetrain subsystem of the robot. */
 public class Drivetrain extends Subsystem {
 	/** Configuration Constants ***********************************************/
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_DRIVETRAIN;
@@ -32,8 +31,7 @@ public class Drivetrain extends Subsystem {
 	DrivetrainEncoders encoders;
 
 	/** Drivetrain ************************************************************
-	 * Set up the talons for desired behavior.
-	 */
+	 * Set up the motor controllers for desired behavior */
 	public Drivetrain() {
 		log.add("Constructor", LOG_LEVEL);
 		
@@ -44,17 +42,16 @@ public class Drivetrain extends Subsystem {
 	}
 
 	private void initMotor(Talon motor, boolean reverse) {
-		motor.setInverted(reverse); 	// affects percent Vbus mode
+		motor.setInverted(reverse);
 	}
 	
 	/** initDefaultCommand ****************************************************
-	 * Set the default command for the subsystem.
-	 */
+	 * Set the default command for the subsystem */
 	public void initDefaultCommand() {
 		setDefaultCommand(new Drivetrain_TankDrive());
 	}
 	
-	/** Methods for setting the motors in Percent Vbus mode *******************/
+	/** Methods for setting the motors in % Voltage mode *******************/
 	public void setPower(double leftPower, double rightPower) {
 
 		leftPower = safetyCheck(leftPower);
@@ -72,7 +69,7 @@ public class Drivetrain extends Subsystem {
 		return power;
 	}
 	
-	/** Provide commands access to the encoders and autonomous ****************/
+	/** Provide commands access to the encoders for autonomous driving ****************/
 	public DrivetrainEncoders getEncoders() {
 		return encoders;
 	}

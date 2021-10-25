@@ -8,8 +8,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
 /** Small Piston **************************************************************
- * The Small piston subsystem for the robot.
- */
+ * The Small piston subsystem of the robot */
 public class SmallPiston extends Subsystem {
 	/** Configuration Constants ***********************************************/
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_SMALL_PISTON;
@@ -22,8 +21,7 @@ public class SmallPiston extends Subsystem {
 	boolean isOpen = open;
 
 	/** Small Piston **********************************************************
-	 * Small piston that shakes off the mop.
-	 */
+	 * The small piston that shakes off the mop */
 	public SmallPiston() {
 		log.add("Constructor", LOG_LEVEL);
 	}
@@ -45,8 +43,7 @@ public class SmallPiston extends Subsystem {
     }
 
 	/** initDefaultCommand ****************************************************
-	 * Set the default command for the subsystem.
-	 */
+	 * Set the default command for the subsystem */
 	public void initDefaultCommand() {
 		setDefaultCommand(null);
 	}

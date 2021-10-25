@@ -8,8 +8,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
 /** Big Piston ****************************************************************
- * The Big Piston subsystem for the robot.
- */
+ * The Big Piston subsystem of the robot */
 public class BigPiston extends Subsystem {
 	/** Configuration Constants ***********************************************/
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_BIG_PISTON;
@@ -22,8 +21,7 @@ public class BigPiston extends Subsystem {
 	boolean isOpen = open;
 
 	/** Big Piston ************************************************************
-	 * Big Piston that shakes off the mop.
-	 */
+	 * The Big Piston that shakes off the mop */
 	public BigPiston() {
 		log.add("Constructor", LOG_LEVEL);
 	}
@@ -48,8 +46,7 @@ public class BigPiston extends Subsystem {
     }
 
 	/** initDefaultCommand ****************************************************
-	 * Set the default command for the subsystem.
-	 */
+	 * Set the default command for the subsystem */
 	public void initDefaultCommand() {
 		setDefaultCommand(null);
 	}

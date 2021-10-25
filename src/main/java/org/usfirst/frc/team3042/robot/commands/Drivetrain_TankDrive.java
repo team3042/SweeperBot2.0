@@ -10,15 +10,12 @@ import org.usfirst.frc.team3042.robot.Robot;
 import org.usfirst.frc.team3042.robot.RobotMap;
 import org.usfirst.frc.team3042.robot.subsystems.Drivetrain;
 
-
 /** Drivetrain_TankDrive ******************************************************
- * Using joystick input to drive the robot.
- */
+ * Using joystick input to drive the robot */
 public class Drivetrain_TankDrive extends Command {
 	/** Configuration Constants ***********************************************/
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_DRIVETRAIN;
 	private static final double ACCELERATION_MAX = RobotMap.ACCELERATION_MAX;
-	
 	
 	/** Instance Variables ****************************************************/
 	Log log = new Log(LOG_LEVEL, SendableRegistry.getName(this));
@@ -27,20 +24,16 @@ public class Drivetrain_TankDrive extends Command {
 	double leftPowerOld, rightPowerOld;
 	Timer timer = new Timer();
 	
-	
 	/** Drivetrain_TankDrive **************************************************
-	 * Required subsystems will cancel commands when this command is run.
-	 */
+	 * Required subsystems will cancel commands when this command is run */
 	public Drivetrain_TankDrive() {
 		log.add("Constructor", Log.Level.TRACE);
 		
 		requires(drivetrain);
 	}
 
-	
 	/** initialize ************************************************************
-	 * Called just before this Command runs the first time
-	 */
+	 * Called just before this Command runs the first time */
 	protected void initialize() {
 		log.add("Initialize", Log.Level.TRACE);
 				
@@ -52,10 +45,8 @@ public class Drivetrain_TankDrive extends Command {
 		timer.reset();
 	}
 
-	
 	/** execute ***************************************************************
-	 * Called repeatedly when this Command is scheduled to run
-	 */
+	 * Called repeatedly when this Command is scheduled to run */
 	protected void execute() {
 		double leftPower = oi.getDriveLeft();
 		double rightPower = oi.getDriveRight();
@@ -71,7 +62,6 @@ public class Drivetrain_TankDrive extends Command {
 		rightPowerOld = rightPower;
 	}
 	
-	
 	/** restrictAcceleration **************************************************/
 	private double restrictAcceleration(double goalPower, double currentPower, double dt) {
 		double maxDeltaPower = ACCELERATION_MAX * dt;
@@ -84,36 +74,24 @@ public class Drivetrain_TankDrive extends Command {
 		return goalPower;
 	}
 	
-	
 	/** isFinished ************************************************************	
-	 * Make this return true when this Command no longer needs to run execute()
-	 */
+	 * Make this return true when this Command no longer needs to run execute() */
 	protected boolean isFinished() {
 		return false;
 	}
 
-	
 	/** end *******************************************************************
-	 * Called once after isFinished returns true
-	 */
+	 * Called once after isFinished returns true */
 	protected void end() {
 		log.add("End", Log.Level.TRACE);
-		terminate();
+		drivetrain.stop();
 	}
 
-	
 	/** interrupted ***********************************************************
 	 * Called when another command which requires one or more of the same
-	 * subsystems is scheduled to run
-	 */
+	 * subsystems is scheduled to run */
 	protected void interrupted() {
 		log.add("Interrupted", Log.Level.TRACE);
-		terminate();
-	}
-	
-	
-	/** Graceful End **********************************************************/
-	private void terminate() {
 		drivetrain.stop();
 	}
 }

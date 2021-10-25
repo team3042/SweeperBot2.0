@@ -8,10 +8,8 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
-
 /** DrivetrainEncoders ********************************************************
- * The encoders for the drivetrain.
- */
+ * The drivetrain encoders on the robot */
 public class DrivetrainEncoders extends Subsystem {
 	/** Configuration Constants ***********************************************/
 	private static final Log.Level LOG_LEVEL = RobotMap.LOG_DRIVETRAIN_ENCODERS;
@@ -19,12 +17,10 @@ public class DrivetrainEncoders extends Subsystem {
 	private static final boolean SENSOR_PHASE_LEFT = RobotMap.SENSOR_PHASE_LEFT;
 	private static final boolean SENSOR_PHASE_RIGHT = RobotMap.SENSOR_PHASE_RIGHT;
 
-	
 	/** Instance Variables ****************************************************/
 	Log log = new Log(LOG_LEVEL, SendableRegistry.getName(this));
 	Encoder leftEncoder, rightEncoder;
 	double leftPositionZero, rightPositionZero;
-	
 	
 	/** DrivetrainEncoders ****************************************************/
 	public DrivetrainEncoders(Encoder leftEncoder1, Encoder rightEncoder1) {
@@ -42,15 +38,12 @@ public class DrivetrainEncoders extends Subsystem {
 		encoder.setReverseDirection(sensorPhase); 	// affects closed-loop mode
 	}
 	
-	
 	/** initDefaultCommand ****************************************************
-	 * Set the default command for the subsystem.
-	 */
+	 * Set the default command for the subsystem */
 	public void initDefaultCommand() {
 		setDefaultCommand(new DrivetrainEncoders_Dashboard());
 	}
 
-	
 	/** reset *****************************************************************/
 	public void reset() {
 		int leftCounts = leftEncoder.get();
@@ -64,11 +57,9 @@ public class DrivetrainEncoders extends Subsystem {
 		rightPositionZero = 0.0;
 	}
 	
-	
 	/** Get the encoder position or speed *************************************
 	 * Position is converted to revolutions
-	 * Speed returns counts per 100ms and is converted to RPM
-	 */
+	 * Speed returns counts per 100ms and is converted to RPM */
 	public double getLeftPosition() {
 		int counts = leftEncoder.get();
 		return countsToRev(counts) - leftPositionZero;
@@ -92,15 +83,12 @@ public class DrivetrainEncoders extends Subsystem {
 		return (double)cp100ms * 10.0 * 60.0 / COUNTS_PER_REVOLUTION;
 	}
 	
-	
 	/** rpmToF ****************************************************************
 	 * Convert RPM reading into an F-Gain
 	 * Note that 1023 is the native full-forward power of the talons, 
 	 * equivalent to setting the power to 1.0.
 	 * The speed has to be converted from rpm to encoder counts per 100ms
-	 * 
-	 * so F = power * 1023 / speed
-	 */
+	 * so F = power * 1023 / speed */
 	public double rpmToF(double rpm, double power) {
 		// Convert to counts per 100 ms
 		double speed = rpm * 4.0 * COUNTS_PER_REVOLUTION / 600.0;
