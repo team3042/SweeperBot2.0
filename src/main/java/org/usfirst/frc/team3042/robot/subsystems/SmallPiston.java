@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableRegistry;
 
-/** Small Piston ****************************************************************
+/** Small Piston **************************************************************
  * The Small piston subsystem for the robot.
  */
 public class SmallPiston extends Subsystem {
@@ -21,23 +21,20 @@ public class SmallPiston extends Subsystem {
 	Solenoid smallPistonSolenoid = new Solenoid(ID);
 	boolean isOpen = open;
 
-	/** Small Piston ************************************************************
+	/** Small Piston **********************************************************
 	 * Small piston that shakes off the mop.
 	 */
 	public SmallPiston() {
 		log.add("Constructor", LOG_LEVEL);
 	}
-
 	public void setOpen(){
     	smallPistonSolenoid.set(!open);
     	isOpen = true;
     }
-
     public void setClose(){
     	smallPistonSolenoid.set(open);
     	isOpen = false;
     }
-
 	public void toggle(){
     	if (isOpen){
     		setClose();

@@ -9,10 +9,10 @@ import org.usfirst.frc.team3042.robot.RobotMap;
 import org.usfirst.frc.team3042.robot.subsystems.BigPiston;
 
 public class BigPiston_Toggle extends InstantCommand {
-   /** Configuration Constants ***********************************************/
-   private static final Log.Level LOG_LEVEL = RobotMap.LOG_SMALL_PISTON;
+  /** Configuration Constants ***********************************************/
+  private static final Log.Level LOG_LEVEL = RobotMap.LOG_SMALL_PISTON;
 
-   /** Instance Variables ****************************************************/
+  /** Instance Variables ****************************************************/
   Log log = new Log(LOG_LEVEL, SendableRegistry.getName(this));
 	BigPiston big_piston = Robot.big_piston;
 
