@@ -2,6 +2,7 @@ package org.usfirst.frc.team3042.robot;
 
 import org.usfirst.frc.team3042.lib.Log;
 import org.usfirst.frc.team3042.robot.commands.BigPiston_Toggle;
+import org.usfirst.frc.team3042.robot.commands.CleanMop;
 import org.usfirst.frc.team3042.robot.commands.Autonomous.Drivetrain_BasketballCourt;
 import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroStraight;
 import org.usfirst.frc.team3042.robot.commands.Drivetrain_GyroTurn;
@@ -40,7 +41,6 @@ public class OI {
 		driveAxisLeft = GAMEPAD_LEFT_Y_AXIS;
 		driveAxisRight = GAMEPAD_RIGHT_Y_AXIS;
 		
-		
 		/** SweeperBot Controls ***********************************************/	
 		gamepad.X.whenPressed(new Drivetrain_GyroStraight(12, 50.0)); 
 		gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0));
@@ -49,6 +49,7 @@ public class OI {
 		gamepad.B.whenPressed(new SmallPiston_Toggle());
 
 		gamepad.Start.whenPressed(new Drivetrain_BasketballCourt());
+		gamepad.Back.whenPressed(new CleanMop());
 	}
 	
 	/** Access to the driving axes values *************************************
