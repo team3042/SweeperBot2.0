@@ -43,12 +43,12 @@ public class OI {
 		
 		/** SweeperBot Controls ***********************************************/	
 		gamepad.X.whenPressed(new Drivetrain_GyroStraight(12, 50.0)); 
-		gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0)); //TODO: needs to be fixed (gyroscope issue)
+		gamepad.Y.whenPressed(new Drivetrain_GyroTurn(90.0)); //TODO: needs to be fixed (gyroscope issue?)
 
 		gamepad.A.whenPressed(new BigPiston_Toggle());
 		gamepad.B.whenPressed(new SmallPiston_Toggle());
 
-		gamepad.Start.whenPressed(new Drivetrain_BasketballCourt()); //TODO: Test this eventually
+		gamepad.Start.whenPressed(new Drivetrain_BasketballCourt()); //TODO: Test this eventually! (drives the whole basketball court)
 		gamepad.Back.whenPressed(new CleanMop());
 	}
 	

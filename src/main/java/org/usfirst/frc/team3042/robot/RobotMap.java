@@ -5,15 +5,13 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import org.usfirst.frc.team3042.lib.Log;
 
 /** RobotMap ******************************************************************
- * The robot configuration file.
- */
+ * The robot configuration file. */
 public class RobotMap {
 	
 	/** Robot Size Parameters *************************************************
 	 * The units of the wheel diameter determine the units of the position 
 	 * and speed closed-loop commands. For example, if the diameter is given 
-	 * in inches, position will be in inches and speed in inches per second.
-	 */
+	 * in inches, position will be in inches and speed in inches per second. */
 	public static final double WHEEL_DIAMETER = 6.0; // Measured in inches
 	public static final double ROBOT_WIDTH = 29.5; // Measured in inches 
 	
@@ -36,8 +34,7 @@ public class RobotMap {
 	public static final double kF_DRIVE_RIGHT = 0.16686239968682717;
 	/** Drivetrain Encoder Settings *******************************************
 	 * Encoder counts per revolution
-	 * In quadrature mode, actual counts will be 4x this; e.g., 360 -> 1440
-	 */
+	 * In quadrature mode, actual counts will be 4x this; e.g., 360 -> 1440 */
 	public static final int COUNTS_PER_REVOLUTION = 1440;
 	// How often the encoders update on the CAN, in milliseconds
 	public static final int ENCODER_FRAME_RATE = 10;
@@ -88,11 +85,6 @@ public class RobotMap {
 	/** PCM channels **********************************************************/
 	public static final int BIG_PISTON_SOLENOID = 3;
 	public static final int SMALL_PISTON_SOLENOID = 2;
-	
-	/** SPI ports *************************************************************/
-	//note that the Gyroscope uses the myRIO Expansion Port (MXP) and is defined in the SPI class (edu.wpi.first.wpilibj.SPI)
-	//notes for dummies: the MXP is the big boy smack center of the RoboRio (where the gyro ALWAYS goes);
-	//see http://www.ni.com/pdf/manuals/374474a.pdf for additional info on the RoboRio
 	
 	/** USB ports *************************************************************/					
 	public static final int USB_GAMEPAD = 0;
